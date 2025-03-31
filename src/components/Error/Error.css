@@ -1,0 +1,22 @@
+.error{
+    margin: 10% auto;
+    display: flex;
+    gap: 1rem;
+    border: 1px solid red;
+    background-color: #ebd9d9;
+    border-radius: 30px;
+    padding: 10px;
+    width: 400px;
+}
+
+
+.error-icon{
+    display: flex;
+    align-items: center;
+}
+
+.error-icon i{
+    font-size: 3rem;
+    color: #d20d0f;
+    background-color: #ebd9d9;
+}

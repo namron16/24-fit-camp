@@ -1,0 +1,25 @@
+@import url('../../main.css');
+
+.no-notification{
+    background-color: #FFEAE5;
+    height: 73vh;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.no-notification h4{
+    font-weight: 400;
+}
+
+.no-notification span{
+    font-size: 12px;
+}
+
+.no-notification i{
+    font-size: 200px;
+    margin-bottom: 2rem;
+}

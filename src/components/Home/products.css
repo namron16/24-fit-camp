@@ -1,0 +1,84 @@
+@import url(../../main.css);
+
+#products {
+    scroll-behavior: smooth;
+    margin: 3em 0;
+}
+
+.product-intro {
+    text-align: center;
+}
+
+.product-span {
+    color: var(--main-lightgreen);
+    font-family: 'Pacifico', sans-serif;
+    transform: rotateZ(-7deg);
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+.product-header {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.product-header :nth-child(1) {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+}
+
+.product-header :nth-child(2) {
+    color: var(--main-lightgreen);
+    font-size: 2rem;
+    font-family: 'Pacifico', sans-serif;
+}
+
+
+.product-list {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.product-list span {
+    font-size: 12px;
+}
+
+.product-list img {
+    height: 400px;
+    object-fit: contain;
+    width: 350px;
+}
+
+@media (max-width: 1112px) {
+    .product-header {
+        font-size: 3rem;
+    }
+
+}
+
+
+@media (max-width: 817px) {
+
+    .product-header {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (max-width: 689px) {
+
+
+    .product-span {
+        font-size: 1.5rem;
+    }
+
+    .product-header {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,336 @@
+@import url('../../main.css');
+
+#home {
+    scroll-behavior: smooth;
+}
+
+.hero-container {
+    position: relative;
+}
+
+
+
+.hero-intro {
+    width: 60%;
+    animation: hero-animation 1s ease-in;
+}
+
+
+@keyframes hero-animation {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero {
+    background: url(../../assets/hero-bg.svg) no-repeat;
+    background-size: cover;
+    height: 90vh;
+}
+
+
+.hero-intro h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--light-bg);
+    text-transform: uppercase;
+}
+
+.hero-intro span {
+    font-size: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+.hero-intro p {
+    font-size: 13px;
+}
+
+
+.hero-intro {
+    height: 200px;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-button {
+    margin: 1rem 0;
+    padding: 1rem 10px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    width: 150px;
+    background-color: var(--main-lightgreen);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-5px);
+
+}
+
+.dumbellModel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 450px;
+    height: 500px;
+    animation: model-animation 1s ease-in;
+}
+
+
+@keyframes model-animation {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1350px) {
+
+    .hero {
+        background: url(../../assets/hero-bg.svg) no-repeat center;
+        background-size: cover;
+        height: 80vh;
+    }
+
+    .hero-intro {
+        width: 60%;
+    }
+
+
+    .hero-intro h1 {
+        font-size: 3.5rem;
+        margin: 2rem 0;
+    }
+
+    .hero-intro span {
+        font-size: 4.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .dumbellModel {
+        top: 80px;
+        right: -50px;
+        width: 400px;
+        height: 450px;
+    }
+}
+
+
+@media (max-width: 1012px) {
+
+    .hero {
+        background: url(../../assets/hero-bg.svg) no-repeat center;
+        background-size: cover;
+        height: 90vh;
+    }
+
+    .hero-intro h1 {
+        font-size: 3rem;
+    }
+
+    .hero-intro span {
+        font-size: 4rem;
+    }
+
+    .dumbellModel {
+        top: 150px;
+        right: -50px;
+        width: 400px;
+        height: 450px;
+    }
+}
+
+
+@media (max-width: 860px) {
+
+
+    .hero-intro {
+        width: 70%;
+        animation: hero-animation 1s ease-in;
+    }
+
+    .hero-intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-intro span {
+        font-size: 3rem;
+    }
+
+    .dumbellModel {
+        top: 200px;
+        right: -60px;
+        width: 350px;
+        height: 400px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+
+    .hero-intro {
+        width: 100%;
+    }
+
+
+    .hero {
+        height: 90vh;
+    }
+
+
+    .hero-intro h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 2rem 0 10px 0;
+    }
+
+    .hero-intro span {
+        text-align: center;
+        font-size: 3rem;
+    }
+
+
+    .hero-intro p {
+        font-size: 12px;
+    }
+
+
+    .hero-button {
+        display: block;
+        margin: 1rem auto;
+        padding: 1rem 10px;
+        font-size: 12px;
+        width: 120px;
+    }
+
+    .dumbellModel {
+        position: absolute;
+        top: 320px;
+        right: 120px;
+        width: 200px;
+        height: 250px;
+    }
+
+
+}
+
+@media (max-width: 550px) {
+
+    .hero-intro {
+        width: 100%;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+
+
+    .hero-intro h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin: 1rem 0 10px 0;
+    }
+
+    .hero-intro span {
+        text-align: center;
+        font-size: 3rem;
+    }
+
+
+    .hero-intro p {
+        font-size: 12px;
+    }
+
+
+    .hero-button {
+        display: block;
+        margin: 1rem auto;
+        padding: 1rem 10px;
+        font-size: 11px;
+        width: 110px;
+    }
+
+    .dumbellModel {
+        position: absolute;
+        top: 350px;
+        right: 50px;
+        width: 250px;
+        height: 300px;
+    }
+
+}
+
+@media (max-width: 394px) {
+
+    .hero-intro {
+        width: 100%;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero-intro h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin: 2rem 0 0 0;
+    }
+
+    .hero-intro span {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+
+    .hero-intro p {
+        font-size: 12px;
+    }
+
+
+    .hero-button {
+        display: block;
+        margin: 2rem auto;
+        padding: 1rem 10px;
+    }
+
+
+    .hero-button {
+        display: block;
+        margin: 1rem auto;
+        padding: 1rem 10px;
+        font-size: 11px;
+        width: 110px;
+    }
+
+
+    .dumbellModel {
+        position: absolute;
+        top: 150%;
+        right: 20px;
+        width: 250px;
+        height: 300px;
+
+    }
+
+
+}

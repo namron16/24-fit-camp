@@ -1,0 +1,154 @@
+@import url('../../main.css');
+
+.pricing {
+    font-family: "Raleway", sans-serif;
+    margin: 5em 0;
+}
+
+.pricing h2 {
+    margin: 1rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.category {
+    background-color: #182033;
+    padding: 1rem 3rem;
+    margin: 3em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.category>span {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 10px 0 1rem 0;
+}
+
+.items {
+    display: flex;
+    align-items: end;
+    padding: 15px 0;
+}
+
+.items:last-child {
+    border-bottom: none;
+}
+
+.items p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.items span {
+    opacity: 0.5;
+}
+
+
+@media (max-width: 1150px) {
+
+    .category {
+        gap: 0;
+        margin: 10px;
+    }
+
+
+}
+
+@media (max-width: 1067px) {
+
+    .pricing h2 {
+        margin: 0px;
+    }
+
+    .category {
+        background-color: #182033;
+        padding: 2.5rem;
+        margin: 2em 0;
+        gap: 0px;
+    }
+
+}
+
+@media (max-width: 899px) {
+
+
+    .pricing-container {
+        gap: 10px;
+    }
+
+    .category {
+        background-color: #182033;
+        padding: 1.5rem;
+        margin: 2em 0;
+        gap: 5px;
+    }
+
+    .pricing h2 {
+        font-size: 3rem;
+    }
+
+    .category>span {
+        font-size: 1.5rem;
+
+    }
+
+
+    .items p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .items span {
+        font-size: 13px;
+        opacity: 0.5;
+    }
+
+}
+
+@media (max-width: 675px) {
+
+
+    .pricing-container {
+        flex-wrap: wrap;
+    }
+
+    .category {
+        background-color: #182033;
+        width: 300px;
+        padding: 1.5rem;
+        margin: 3em 0 0 0;
+        gap: 5px;
+    }
+
+    .pricing h2 {
+        font-size: 3rem;
+    }
+
+    .category>span {
+        font-size: 1.5rem;
+
+    }
+
+
+    .items p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .items span {
+        font-size: 13px;
+        opacity: 0.5;
+    }
+
+}

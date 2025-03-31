@@ -1,0 +1,62 @@
+@import url(../../main.css);
+
+.scroll-btn {
+    position: fixed;
+    background-color: var(--text-green);
+    font-size: 10px;
+    bottom: 100px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    z-index: 9;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.4s;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.scroll-btn i{
+    font-size: 1.5rem;
+    color: var(--light-bg);
+}
+
+
+.scroll-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: all 0.3s;
+}
+
+
+@media (max-width: 750px) {
+
+    .scroll-btn {
+        bottom: 50px;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+
+    }
+    
+}
+@media (max-width: 400px) {
+
+    .scroll-btn {
+        bottom: 50px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+
+    }
+    
+}
+
+
+

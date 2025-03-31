@@ -1,0 +1,8 @@
+@import url('../../main.css');
+
+
+.burger-menu{
+    background-color: transparent;
+    border: none;
+    display: none;
+}

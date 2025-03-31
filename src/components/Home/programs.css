@@ -1,0 +1,146 @@
+@import url('../../main.css');
+
+#programs {
+    scroll-behavior: smooth;
+}
+
+.programs {
+    padding: 1rem 0;
+}
+
+.program-intro {
+    margin: 2em auto;
+    text-align: center;
+}
+
+.program-intro h2 {
+    font-size: 4rem;
+}
+
+.program-intro h3 {
+    font-size: 2rem;
+    transform: rotateZ(-7deg);
+    font-family: "Pacifico", serif;
+    color: var(--main-lightgreen);
+    font-weight: 300;
+}
+
+.program-span {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+}
+
+
+.program-list-container {
+    margin: 1rem 0;
+    display: flex;
+    column-gap: 2rem;
+    justify-content: space-around;
+
+}
+
+.program-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-green);
+    /* animation: fadeAnimation 3s ease 1 forwards;
+    animation-timeline: view();
+    animation-range: entry 0% contain 100%; */
+}
+
+/* 
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+
+
+
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--text-green);
+}
+
+.overlay span {
+    font-weight: 600;
+    color: var(--light-bg);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.program-list p {
+    padding: 10px;
+    margin: 10px 10px 3rem 10px;
+    opacity: 0.5;
+    font-size: 13px;
+    color: var(--light-bg);
+}
+
+.program-list-container img {
+    background-color: var(--main-green);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 2rem auto 10px auto;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+
+    .program-list-container {
+        flex-wrap: wrap;
+        column-gap: 0;
+        row-gap: 2rem;
+    }
+
+    .program-list {
+        max-width: 300px;
+        background-color: var(--main-green);
+    }
+}
+
+@media (max-width: 950px) {
+
+
+    .program-intro h2 {
+        font-size: 3rem;
+    }
+
+    .program-intro h3 {
+        font-size: 1.5rem;
+
+    }
+
+
+    .program-list-container {
+        column-gap: 0px;
+    }
+}
+
+
+@media (max-width: 617px) {
+
+
+    .program-intro h2 {
+        font-size: 2.5rem;
+    }
+
+}

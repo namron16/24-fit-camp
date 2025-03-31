@@ -1,0 +1,11 @@
+@import url('../../main.css');
+
+.data-table-grid{
+    padding: 10px;
+    background-color: var(--light-bg);
+    
+}
+
+.MuiDataGrid-toolbarContainer {
+    flex-direction: row-reverse;
+}

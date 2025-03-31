@@ -1,0 +1,30 @@
+@import url('../../main.css');
+
+.home,
+.home-main {
+    background-color: var(--dark-bg-);
+    color: var(--light-bg);
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth !important;
+    overflow-x: hidden;
+}
+
+
+
+@keyframes fadeAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+.home-main {
+    margin: 0 10%;
+}

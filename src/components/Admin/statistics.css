@@ -1,0 +1,51 @@
+@import url('../../main.css');
+
+.stats-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-items {
+    background-color: var(--light-bg);
+    padding: 1.5rem 0px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px #c9c7c7;
+}
+
+.stats-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.stat-number {
+    color: var(--main-lightgreen);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.stat-item-icon {
+    font-size: 2.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .stat-items {
+        padding: 2rem 5px;
+    }
+}

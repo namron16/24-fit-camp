@@ -1,0 +1,17 @@
+@import url('../../main.css');
+
+.react-calendar {
+    border: none;
+    border-radius: 10px;
+
+}
+
+
+.calendar {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.react-calendar__month-view__weekdays {
+    text-decoration: none;
+}

@@ -1,0 +1,47 @@
+@import url('../../main.css');
+
+
+
+.info{
+    margin: 10px 0;
+}
+.info button{
+    background-color: var(--text-green);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--light-bg);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+.active-status {
+    color: var(--main-lightgreen);
+}
+
+.inactive-status {
+    color: var(--red-clr);
+}
+
+.members-icon{
+    width: 30px;
+    height: 30px;
+    margin: 10px 0;
+}
+
+.actions button, .actions a{
+    border: none;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.edit {
+    color: var(--dark-bg-);
+    margin-right: 1.5rem;
+}
+.delete{
+    color: var(--red-clr);
+}

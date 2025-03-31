@@ -1,0 +1,50 @@
+@import url('../../main.css');
+
+
+.swiper {
+    margin: 3em 0;
+}
+
+.swiper-pagination{
+    height: 1rem;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--main-lightgreen) !important;
+    width: 12px;
+    height: 12px;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--light-bg) !important;
+    width: 8px;
+    height: 8px;
+    margin: 0 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+    color: var(--main-lightgreen) !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50px;
+    background-color: var(--text-green) !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    height: 20px !important;
+    width: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none !important;
+    }
+  }

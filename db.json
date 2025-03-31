@@ -1,0 +1,70 @@
+{
+  "members": [
+    {
+      "id": "1",
+      "name": "Namron Pontillo",
+      "email": "nam@gmail.com",
+      "plan": "regular",
+      "contact": "09558861121",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Magnus Carlsen",
+      "contact": "09778661231",
+      "email": "nam@gmail.com",
+      "plan": "regular",
+      "isActive": false
+    },
+    {
+      "id": "3",
+      "name": "Santino Makalintal",
+      "email": "nam@gmail.com",
+      "plan": "regular",
+      "contact": "09558855623",
+      "isActive": true
+    },
+    {
+      "id": "8481182f-bcdc-41a4-9894-c15cbe808c39",
+      "name": "jeff",
+      "email": "jeffetheplumber@example.com",
+      "plan": "regular",
+      "contact": "097786555",
+      "isActive": true
+    },
+    {
+      "id": "aaec9b90-c90c-43b0-86dc-49ddded8980d",
+      "name": "kratos",
+      "email": "godofwar@war.com",
+      "plan": "regular",
+      "contact": "098877665544",
+      "isActive": true
+    }
+  ],
+  "trainers": [
+    {
+      "id": "1",
+      "name": "Akira Yatoshi",
+      "contact": "09557878334",
+      "email": "nam@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Justin Mendoza",
+      "contact": "09349982776",
+      "email": "nam@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Jennifer Goldilocks",
+      "contact": "09990781342",
+      "email": "nam@gmail.com"
+    },
+    {
+      "id": "a6621669-6798-449e-bb86-cc697741fcc9",
+      "name": "brandon",
+      "email": "brandon@example.com",
+      "contact": "099778866"
+    }
+  ]
+}

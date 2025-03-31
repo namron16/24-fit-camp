@@ -1,0 +1,61 @@
+@import url('../../main.css');
+
+.dashboard-header {
+    height: 100%;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-bg-);
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    background-color: var(--dark-bg-);
+    color: #fff;
+    padding: 10px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    object-fit: cover;
+}
+
+.logo span {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.dashboard-header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.user i {
+    font-size: 1.5;
+}
+
+.admin-icon {
+    font-size: 1.5rem;
+}
