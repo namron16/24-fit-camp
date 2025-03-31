@@ -1,7 +1,13 @@
 import React from "react";
 import "./main.css";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+// import { HashRouter, Routes, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+} from "react-router";
 import Root from "./components/Home/Root";
 import Layout from "./components/Admin/Layout";
 import Dashboard from "./pages/Admin/Dashboard";
@@ -17,28 +23,54 @@ import HomePage from "./pages/Home/HomePage";
 
 const App = () => {
   const client = new QueryClient();
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<HomePage />} />
+        <Route path="admin" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="gym-management" element={<Gym />} />
+          <Route path="trainers" element={<Trainers />} />
+          <Route path="members">
+            <Route index element={<Members />} errorElement={<Error />} />
+            <Route
+              path=":memberId"
+              element={<MemberDetails />}
+              errorElement={<Error />}
+            />
+          </Route>
+          <Route path="notifications" element={<Notifications />} />
+          <Route path="admin-profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Route>
+    )
+  );
 
   return (
+    // <QueryClientProvider client={client}>
+    //   <HashRouter hashType='slash'>
+    //     <Routes>
+    //       <Route path="/" element={<Root />}>
+    //         <Route index element={<HomePage />} />
+    //         <Route path="admin" element={<Layout />}>
+    //           <Route index element={<Dashboard />} />
+    //           <Route path="gym-management" element={<Gym />} />
+    //           <Route path="trainers" element={<Trainers />} />
+    //           <Route path="members">
+    //             <Route index element={<Members />} errorElement={<Error />} />
+    //             <Route path=":memberId" element={<MemberDetails />} errorElement={<Error />} />
+    //           </Route>
+    //           <Route path="notifications" element={<Notifications />} />
+    //           <Route path="admin-profile" element={<Profile />} />
+    //           <Route path="settings" element={<Settings />} />
+    //         </Route>
+    //       </Route>
+    //     </Routes>
+    //   </HashRouter>
+    // </QueryClientProvider>
     <QueryClientProvider client={client}>
-      <HashRouter hashType='slash'>
-        <Routes>
-          <Route path="/" element={<Root />}>
-            <Route index element={<HomePage />} />
-            <Route path="admin" element={<Layout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="gym-management" element={<Gym />} />
-              <Route path="trainers" element={<Trainers />} />
-              <Route path="members">
-                <Route index element={<Members />} errorElement={<Error />} />
-                <Route path=":memberId" element={<MemberDetails />} errorElement={<Error />} />
-              </Route>
-              <Route path="notifications" element={<Notifications />} />
-              <Route path="admin-profile" element={<Profile />} />
-              <Route path="settings" element={<Settings />} />
-            </Route>
-          </Route>
-        </Routes>
-      </HashRouter>
+      <RouterProvider router={router} />
     </QueryClientProvider>
   );
 };

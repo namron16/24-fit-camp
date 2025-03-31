@@ -11,7 +11,7 @@ const HomeHeader = () => {
     <header className="home-header">
       <nav className="nav">
         <div className="home-logo">
-          <a href="#home">
+          <a href="home">
             <img src={logo} alt="24 fit camp logo" />
           </a>
           <span>24-Fit Camp</span>
