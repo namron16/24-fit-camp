@@ -1,17 +1,30 @@
 @import url('../../main.css');
 
 .react-calendar {
+    padding: 1rem 0;
     border: none;
     border-radius: 10px;
-
+    box-shadow: 1px 1px 10px 1px #c9c7c7;
 }
 
 
 .calendar {
+    position: relative;
     grid-row: span 2 / span 2;
     grid-column-start: 3;
 }
 
 .react-calendar__month-view__weekdays {
     text-decoration: none;
+}
+
+
+.react-calendar__tile--now {
+    /* border-radius: 50% !important; */
+    background-color: var(--main-lightgreen) !important;
+}
+
+.react-calendar__tile--active {
+    /* border-radius: 50% !important; */
+    background-color: var(--main-lightgreen) !important;
 }

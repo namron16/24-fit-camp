@@ -1,0 +1,68 @@
+@import url('../../main.css');
+
+.profile{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-bg);
+    border-radius: 20px;
+}
+
+.profile-overlay{
+    width: 100%;
+    position: inherit;
+    height: 30%;
+    background-color: var(--text-green);
+    border-radius: 20px 20px 0 0;
+}
+
+.profile__img{
+    background-color: var(--light-bg);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+    left: 30px;
+}
+
+.profile__img i{
+    
+    font-size: 140px;
+}
+
+.edit-container{
+    display: flex;
+    justify-content: end;
+    margin: 1rem 2rem ;
+}
+
+/* .edit__btn{
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid var(--dark-bg-);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+} */
+
+
+.admin-detail__section{
+    display: flex;
+    margin: 8% 3rem;
+    flex-direction: column;
+}
+
+.admin-name{
+    font-size: 25px;
+    font-weight: 600;
+}
+.admin-email{
+    font-size: 14px;
+    font-weight: 300;
+}
+

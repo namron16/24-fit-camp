@@ -1,99 +1,69 @@
-"use client";
-
-import React, { useRef } from "react";
+import React, { useRef, useMemo, useCallback } from "react";
+import ActionBtn from "./ActionBtn";
 import DataTable from "../../components/Admin/DataTable";
-import MemberModal from "../../components/Admin/MemberModal";
-import { FetchMembers } from "../../utils/FetchData";
-import { DeleteMember } from "../../utils/FetchData";
 import Loading from "../../components/Loading/Loading";
-import { Link } from "react-router-dom";
+import MemberModal from "../../components/Admin/MemberModal";
+import { useFetchMembers, useDeleteMember } from "../../utils/FetchData";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
+import usePageTransition from "../../utils/usePageTransition";
 import "./members.css";
 
 const Members = () => {
-  const { deleteMember } = DeleteMember();
-  const handleDelete = (id) => {
-    console.log(`${id} deleted`);
-    deleteMember(id);
-  };
-  const columns = [
+  const { deleteMember } = useDeleteMember();
+  const { members } = useFetchMembers();
+  const { isPending, showContent } = usePageTransition(0);
+
+  const handleDelete = useCallback(
+    (id) => {
+      console.log(`${id} deleted`);
+      deleteMember(id);
+    },
+    [deleteMember]
+  );
+
+  const columns = useMemo(() => [
     {
       field: "icon",
       headerName: "Icon",
       width: 60,
-      renderCell: (params) => {
-        return (
-          <img
-            src={params.row.img ? params.row.img : userIcon}
-            className="members-icon"
-          />
-        );
-      },
+      renderCell: (params) => (
+        <img
+          src={params.row.img || userIcon}
+          className="members-icon"
+          loading="lazy"
+        />
+      ),
     },
-    {
-      field: "name",
-      headerName: "Full Name",
-      width: 150,
-      type: "string",
-      editable: true,
-    },
-
-    {
-      field: "email",
-      headerName: "Email",
-      type: "string",
-      width: 180,
-    },
-    {
-      field: "contact",
-      headerName: "Contact",
-      type: "string",
-      width: 180,
-    },
-
-    {
-      field: "plan",
-      headerName: "Plan",
-      type: "string",
-      with: 100,
-    },
+    { field: "name", headerName: "Full Name", width: 150 },
+    { field: "email", headerName: "Email", width: 180 },
+    { field: "contact", headerName: "Contact", width: 180 },
+    { field: "plan", headerName: "Plan", width: 100 },
     {
       field: "isActive",
       headerName: "Status",
       width: 110,
-      type: Boolean,
-      renderCell: (params) => {
-        return (
-          <span className={params.value ? "active-status" : "inactive-status"}>
-            {params.value ? "Active" : "Inactive"}
-          </span>
-        );
-      },
+      renderCell: (params) => (
+        <span className={params.value ? "active-status" : "inactive-status"}>
+          {params.value ? "Active" : "Inactive"}
+        </span>
+      ),
     },
-
     {
       field: "actions",
       headerName: "Actions",
       width: 90,
-      renderCell: (params) => {
-        return (
-          <div className="actions">
-            <Link to={`${params.row.id}`} className="edit">
-              <i className="fa-solid fa-pen-to-square"></i>
-            </Link>
-            <button
-              className="delete"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              <i className="fa-solid fa-trash"></i>
-            </button>
-          </div>
-        );
-      },
+      renderCell: (params) => (
+        <div className="actions">
+          <ActionBtn handleDelete={handleDelete} paramsId={params.row.id} />
+        </div>
+      ),
     },
-  ];
-  const { members, isLoading } = FetchMembers();
+  ]);
+
   const dialogRef = useRef(null);
+
+  if (!showContent || isPending) return <Loading />;
+
   return (
     <section className="users">
       <div className="info">
@@ -101,12 +71,8 @@ const Members = () => {
           <i className="fa-solid fa-plus"></i> Add member
         </button>
       </div>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <DataTable columns={columns} rows={members?.data} />
-      )}
-      <MemberModal dialogRef={dialogRef} columns={columns} slug={"member"} />
+      <DataTable columns={columns} rows={members?.data} />
+      <MemberModal dialogRef={dialogRef} columns={columns} slug="member" />
     </section>
   );
 };

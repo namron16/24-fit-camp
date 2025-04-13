@@ -8,15 +8,16 @@
 
 
 
-
 :root {
     --dark-bg-: #191A19;
+    --dark-primary: #222222;
+    --dark-secondary: #272727;
     --dark-green-bg: #255F38;
     --text-green: #1F7D53;
     --main-green: #1E5128;
     --main-lightgreen: #1edb17;
     --light-bg: #fff;
-    --red-clr: #b61042;
+    --red-clr: #d80a48;
 }
 
 *::before,

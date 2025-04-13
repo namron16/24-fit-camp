@@ -1,18 +1,27 @@
-import React, { useRef } from "react";
-import { FetchTrainers } from "../../utils/FetchData";
-import Loading from "../../components/Loading/Loading";
+import React, { useRef, useMemo, useCallback } from "react";
+import { useFetchTrainers } from "../../utils/FetchData";
+import { useDeleteTrainer } from "../../utils/FetchData";
 import DataTable from "../../components/Admin/DataTable";
+import Loading from "../../components/Loading/Loading";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
 import TrainerModal from "../../components/Admin/TrainerModal";
-import { DeleteTrainer } from "../../utils/FetchData";
+import ActionBtn from "./ActionBtn";
+import usePageTransition from "../../utils/usePageTransition";
 
 const Trainers = () => {
-  const { deleteTrainer } = DeleteTrainer();
-  const handleDelete = (id) => {
-    console.log(`${id} deleted`);
-    deleteTrainer(id);
-  };
-  const columns = [
+  const { deleteTrainer } = useDeleteTrainer();
+  const { trainers } = useFetchTrainers();
+  const dialogRef = useRef(null);
+  const { isPending, showContent } = usePageTransition(100);
+
+  const handleDelete = useCallback(
+    (id) => {
+      console.log(`${id} deleted`);
+      deleteTrainer(id);
+    },
+    [deleteTrainer]
+  );
+  const columns = useMemo(() => [
     {
       field: "icon",
       headerName: "Icon",
@@ -25,11 +34,6 @@ const Trainers = () => {
           />
         );
       },
-    },
-    {
-      field: "id",
-      headerName: "Id",
-      width: 250,
     },
     {
       field: "name",
@@ -59,22 +63,14 @@ const Trainers = () => {
       renderCell: (params) => {
         return (
           <div className="actions">
-            <button className="edit">
-              <i className="fa-solid fa-pen-to-square"></i>
-            </button>
-            <button
-              className="delete"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              <i className="fa-solid fa-trash"></i>
-            </button>
+            <ActionBtn handleDelete={handleDelete} paramsId={params.row.id} />
           </div>
         );
       },
     },
-  ];
-  const { trainers, isLoading } = FetchTrainers();
-  const dialogRef = useRef(null);
+  ]);
+
+  if (isPending || !showContent) return <Loading />;
 
   return (
     <section className="trainers">
@@ -84,6 +80,7 @@ const Trainers = () => {
         </button>
       </div>
       <DataTable columns={columns} rows={trainers?.data} />
+
       <TrainerModal dialogRef={dialogRef} columns={columns} slug={"trainer"} />
     </section>
   );

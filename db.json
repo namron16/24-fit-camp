@@ -1,43 +1,43 @@
 {
   "members": [
     {
-      "id": "1",
-      "name": "Namron Pontillo",
-      "email": "nam@gmail.com",
+      "id": "784064a8-73a4-4d9d-a561-68b3d4776826",
+      "name": "nam",
+      "email": "nam@example.com",
       "plan": "regular",
-      "contact": "09558861121",
+      "contact": "09999999999",
       "isActive": true
     },
     {
-      "id": "2",
-      "name": "Magnus Carlsen",
-      "contact": "09778661231",
-      "email": "nam@gmail.com",
-      "plan": "regular",
-      "isActive": false
-    },
-    {
-      "id": "3",
-      "name": "Santino Makalintal",
-      "email": "nam@gmail.com",
-      "plan": "regular",
-      "contact": "09558855623",
-      "isActive": true
-    },
-    {
-      "id": "8481182f-bcdc-41a4-9894-c15cbe808c39",
+      "id": "66667b15-bf87-4072-8748-4fc741f3e783",
       "name": "jeff",
-      "email": "jeffetheplumber@example.com",
-      "plan": "regular",
-      "contact": "097786555",
+      "email": "jeff@example.com",
+      "plan": "student",
+      "contact": "09778866554",
       "isActive": true
     },
     {
-      "id": "aaec9b90-c90c-43b0-86dc-49ddded8980d",
-      "name": "kratos",
-      "email": "godofwar@war.com",
+      "id": "2e8d116e-48a8-4fef-9537-bccba0adec97",
+      "name": "kevin",
+      "email": "kevin@example.com",
+      "plan": "personal",
+      "contact": "09786655674",
+      "isActive": true
+    },
+    {
+      "id": "5d5a6d35-47ef-4acd-94ad-28cc9ed09e74",
+      "name": "gab",
+      "email": "gab@example.com",
       "plan": "regular",
-      "contact": "098877665544",
+      "contact": "09999999999",
+      "isActive": true
+    },
+    {
+      "id": "ec8e8825-eadf-4990-b734-04a6f15e0f0c",
+      "name": "asdasdasd",
+      "email": "asd@example.com",
+      "plan": "regular",
+      "contact": "09786655674",
       "isActive": true
     }
   ],
@@ -65,6 +65,29 @@
       "name": "brandon",
       "email": "brandon@example.com",
       "contact": "099778866"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "firstName": "Cookie",
+      "lastName": "Monster",
+      "email": "cookiemonster@example.com"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "post": "hello, gym rats :DD"
+    },
+    {
+      "id": "d9b8fe68-0e63-4e24-8f4e-a6e0e7d761cb",
+      "post": "heyyy"
+    },
+    {
+      "id": "36f85b10-fd34-402b-ac70-d15c6acf1e8f",
+      "post": "asdasdadas",
+      "currDate": "2025-3-12"
     }
   ]
 }

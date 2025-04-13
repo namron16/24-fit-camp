@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import "./profile.css";
 
 const Profile = () => {
   return (
-    <div>
-      <h1>Profile</h1>
-    </div>
-  )
-}
+    <section className="profile">
+      <div className="profile-overlay">
+        <div className="profile__img">
+          <i className="fa-solid fa-circle-user"></i>
+        </div>
+      </div>
+    
+      <div className="admin-detail__section">
+        <span className="admin-name">Namron Pontillo</span>
+        <span className="admin-email">namron@example.com</span>
+      </div>
+    </section>
+  );
+};
 
-export default Profile
+export default Profile;

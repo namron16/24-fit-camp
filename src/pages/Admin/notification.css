@@ -1,25 +1,30 @@
 @import url('../../main.css');
 
-.no-notification{
+.notifications__section {
     background-color: #FFEAE5;
-    height: 73vh;
-    margin: 10px;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.no-notification__section {
     text-align: center;
+    height: 100%;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem 0;
 }
 
-.no-notification h4{
+.no-notification h4 {
     font-weight: 400;
 }
 
-.no-notification span{
+.no-notification span {
     font-size: 12px;
 }
 
-.no-notification i{
+.no-notification i {
     font-size: 200px;
     margin-bottom: 2rem;
 }

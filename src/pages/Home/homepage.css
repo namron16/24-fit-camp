@@ -11,20 +11,14 @@
 
 
 
-@keyframes fadeAnimation {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+.home-main {
+    margin: 0 10%;
 }
 
 
+@media (max-width: 400px) {
 
-.home-main {
-    margin: 0 10%;
+    .home-main {
+        margin: 0 5%;
+    }
 }

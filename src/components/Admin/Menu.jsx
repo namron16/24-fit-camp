@@ -14,35 +14,35 @@ const Menu = () => {
   return (
     <section className="menu">
       <div className="main-menu">
-        <span>Main Menu</span>
+        <span className="category__span">Main Menu</span>
         <NavLink
           to={"/admin"}
           style={({ isActive }) => (isActive ? style : null)}
           end
         >
           <i className="fa-solid fa-house"></i>
-          Dashboard
+          <span>Dashboard</span>
         </NavLink>
         <NavLink
           to={"gym-management"}
           style={({ isActive }) => (isActive ? style : null)}
         >
           <i className="fa-solid fa-dumbbell"></i>
-          Gym
+          <span>Gym</span>
         </NavLink>
         <NavLink
           to={"trainers"}
           style={({ isActive }) => (isActive ? style : null)}
         >
           <i className="fa-solid fa-users-gear"></i>
-          Trainers
+          <span>Trainers</span>
         </NavLink>
         <NavLink
           to={"members"}
           style={({ isActive }) => (isActive ? style : null)}
         >
           <i className="fa-solid fa-users"></i>
-          Members
+          <span>Members</span>
         </NavLink>
         <NavLink
           to={"notifications"}
@@ -52,31 +52,32 @@ const Menu = () => {
             <i className="fa-regular fa-bell"></i>
             {notif.length > 0 && <div className="notif">3</div>}
           </div>
-          Notifications
+          <span>Notifications</span>
         </NavLink>
       </div>
       <div className="settings">
-        <span>Settings</span>
+        <span className="category__span">Settings</span>
         <NavLink
           to={"admin-profile"}
           style={({ isActive }) => (isActive ? style : null)}
         >
           <i className="fa-regular fa-circle-user"></i>
-          Profile
+          <span>Profile</span>
         </NavLink>
         <NavLink
           to={"settings"}
           style={({ isActive }) => (isActive ? style : null)}
         >
           <i className="fa-solid fa-gear"></i>
-          Settings
+          <span>Settings</span>
         </NavLink>
         <NavLink
           to={"logout"}
           style={({ isActive }) => (isActive ? style : null)}
+          className={"log-out"}
         >
           <i className="fa-solid fa-right-from-bracket"></i>
-          Logout
+          <span>Log out</span>
         </NavLink>
       </div>
     </section>

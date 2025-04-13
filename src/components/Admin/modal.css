@@ -2,6 +2,8 @@
 
 dialog {
     margin: auto;
+    /* width: 300px;
+    height: 500px; */
     padding: 1rem;
     border: none;
     border-radius: 10px;
@@ -51,10 +53,10 @@ dialog[open]::backdrop {
 
 
 dialog h1 {
-    margin: 1rem 0 40px 0;
+    margin: 1rem 0 20px 0;
 }
 
-form {
+.form-field {
     display: flex;
     max-width: 400px;
     justify-content: space-between;
@@ -69,20 +71,41 @@ form input {
     padding: 10px;
     background-color: transparent;
     outline: none;
-    border: 1px solid var(--dark-bg-);
+    border: 1px solid #11111144;
+    max-width: 200px;
 
 }
 
 .item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 13px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.item em{
+    max-width: 200px;
+    font-size: 10px;
+    display: block;
+    color: var(--red-clr);
+}
+
+.item select{
+    padding: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #11111144;
+    width: 190px;
+    font-family: inherit;
 }
 
 
+
 .add-member-btn{
-    width: 150px;
+    max-width: 150px;
+    max-height: 50px;
     padding: 10px 5px;
     font-family: inherit;
     font-weight: 700;

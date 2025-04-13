@@ -1,8 +1,10 @@
 @import url('../../main.css');
 
 .container {
+    overflow-y: hidden;
     display: flex;
-    gap: 5%;
+    gap: 3.5%;
+    padding: 10px 0;
 }
 
 .menu-container {
@@ -12,9 +14,53 @@
 
 .content-container {
     position: relative;
-    width: 85%;
-    padding: 10px 1rem;
+    width: 90%;
+    height: 80vh;
+    padding: 1rem;
     background-color: rgba(238, 236, 236, 0.5);
-    border-radius: 30px;
+    border-radius: 15px;
     margin-right: 2rem;
+}
+
+#dark {
+    background-color: #111;
+    color: var(--light-bg);
+}
+
+#dark .content-container {
+    background-color: var(--dark-primary);
+    color: var(--dark-bg-);
+    border-radius: 10px;
+}
+
+#dark .stat-items,  #dark .charts {
+    color: var(--light-bg);
+    box-shadow: none;
+    background-color: var(--dark-secondary);
+}
+
+#dark .react-calendar{
+    box-shadow: none;
+}
+
+#dark .menu,
+#dark .menu a {
+    color: var(--light-bg);
+}
+
+#dark .menu {
+    background-color: var(--dark-primary);
+    border-radius: 20px;
+}
+
+#dark .personal-details__section,
+#dark .settings-password__section,
+#dark .settings-theme__section {
+    background-color: var(--dark-secondary);
+    border: 1px solid var(--light-bg);
+    color: var(--light-bg);
+}
+
+#dark .details__form-items input {
+    color: var(--light-bg);
 }

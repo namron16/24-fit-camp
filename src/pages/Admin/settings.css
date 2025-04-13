@@ -1,0 +1,77 @@
+@import url('../../main.css');
+
+
+.settings__section{
+    position: relative;
+    height: 100%;
+}
+
+.personal-details__section{
+    position: relative;
+    border: 1px solid var(--dark-bg-);
+    padding: 1rem 2rem;
+}
+
+.details__form{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.details__form-items {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+.details__form-items input{
+    font-family: inherit;
+    border: 1px solid #b8b8b8;
+    background-color: transparent;
+    height: 25px;
+    padding: 5px;
+    width: 215px;
+}
+.details__form-items label{
+    font-size: 15px;
+    font-weight: 300;
+}
+.details__form-items em{
+    font-size: 12px;
+    color: var(--red-clr);
+    font-weight: 200;
+}
+
+.settings__btn{
+    display: block;
+    width: 100px;
+    padding: 10px 1rem;
+    font-family: inherit;
+    background-color: var(--dark-bg-);
+    color: var(--light-bg);
+    border: none;
+}
+
+
+.settings-password__section, .settings-theme__section{
+    margin: 1rem 0;
+    border: 1px solid var(--dark-bg-);
+    padding: 1rem 2rem;
+}
+
+.reset-password__btn{
+    padding: 10px;
+    font-family: inherit;
+    background-color: var(--dark-bg-);
+    color: var(--light-bg);
+    border: none;
+    margin: 1rem 0;
+}
+
+.settings-theme__section{
+    display: flex;
+    gap: 1rem;
+}

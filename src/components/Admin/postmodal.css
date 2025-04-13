@@ -1,0 +1,97 @@
+@import url('../../main.css');
+
+
+dialog {
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.2s allow-discrete;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+dialog[open] {
+    opacity: 1;
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0
+    }
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.postModal{
+    margin: auto;
+    border: none;
+    width: 300px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 10px;
+}
+
+.post-modal-detail{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.postModal img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.postModal input{
+    border: none;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+.close-post-modal {
+    border: none;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 10px;
+    right: 1.5rem;
+}
+
+.close-post-modal i {
+    font-size: 2rem;
+    color: var(--red-clr);
+}
+
+.add-post{
+    width: 100px;
+    padding: 5px 10px;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.active-post-btn{
+    background-color: rgb(16, 16, 201);
+    color: var(--light-bg);
+}
