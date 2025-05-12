@@ -6,7 +6,7 @@ const usePageTransition = (delay = 1000) => {
 
   useEffect(() => {
     startTransition(() => {
-      setTimeout(() => setShowContent(true), delay); 
+      setTimeout(() => setShowContent(true), delay);
     });
   }, [delay]);
 

@@ -1,9 +1,8 @@
 import React from "react";
-import "./togglebutton.css";
-import { useContext } from "react";
-import { ThemeContext } from "./Layout";
+import "./toggleButton.css";
+import { useThemeContext } from "../../contexts/ThemeContext";
 const ToggleButton = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useThemeContext();
   return (
     <label className="switch">
       <input

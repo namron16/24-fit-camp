@@ -1,23 +1,21 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Slider from "./Slider";
 import { database } from "../../../database";
 import "./products.css";
 import ScrollReveal from "scrollreveal";
 
 const Products = () => {
-
-  
   useEffect(() => {
-    ScrollReveal().reveal('.product-intro', {
-      origin: 'right',
-      distance: '50px',
+    ScrollReveal().reveal(".product-intro", {
+      origin: "right",
+      distance: "50px",
       duration: 1000,
       delay: 100,
       reset: false,
     });
   }, []);
-  
-  const products = database.products
+
+  const products = database.products;
 
   return (
     <section className="products" id="products">
@@ -28,7 +26,7 @@ const Products = () => {
           <span className="product-header-span"> & </span>products
         </p>
       </div>
-      <Slider products={products}/>
+      <Slider products={products} />
     </section>
   );
 };

@@ -1,0 +1,113 @@
+@import url('../../main.css');
+
+.not-found {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fbfbfb;
+}
+
+
+.not-found__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.not-found-message {
+    width: 35ch;
+}
+
+.not-found-message h1 {
+    font-size: 5rem;
+}
+
+.not-found-message p {
+    color: var(--red-clr);
+}
+
+.not-found img {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 350px;
+    height: 250px;
+}
+
+@media (max-width: 740px) {
+    .not-found-message {
+        width: 30ch;
+    }
+
+    .not-found-message h1 {
+        font-size: 4.5rem;
+    }
+
+    .not-found img {
+        background-color: transparent;
+        border-radius: 50%;
+        width: 300px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 690px) {
+    .not-found-message {
+        width: 30ch;
+    }
+
+    .not-found-message h1 {
+        font-size: 4rem;
+    }
+
+    .not-found-message h2 {
+        font-size: 1rem;
+    }
+
+    .not-found-message p {
+        font-size: 13px;
+    }
+
+
+    .not-found img {
+        background-color: transparent;
+        border-radius: 50%;
+        width: 250px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .not-found__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .not-found-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .not-found-message h1 {
+        font-size: 4rem;
+    }
+
+    .not-found img {
+        background-color: transparent;
+        border-radius: 50%;
+        width: 250px;
+        height: 200px;
+    }
+}

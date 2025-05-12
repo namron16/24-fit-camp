@@ -1,11 +1,12 @@
 import React, { useRef, useMemo, useCallback } from "react";
-import ActionBtn from "./ActionBtn";
+import ActionBtn from "../../components/Admin/ActionBtn";
 import DataTable from "../../components/Admin/DataTable";
 import Loading from "../../components/Loading/Loading";
-import MemberModal from "../../components/Admin/MemberModal";
+import Modal from "../../components/Admin/Modal";
 import { useFetchMembers, useDeleteMember } from "../../utils/FetchData";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
 import usePageTransition from "../../utils/usePageTransition";
+
 import "./members.css";
 
 const Members = () => {
@@ -34,10 +35,17 @@ const Members = () => {
         />
       ),
     },
-    { field: "name", headerName: "Full Name", width: 150 },
+    {
+      field: "fullName",
+      headerName: "Full name",
+      sortable: false,
+      width: 160,
+      valueGetter: (value, row) =>
+        `${row.firstName || ""} ${row.lastName || ""}`,
+    },
     { field: "email", headerName: "Email", width: 180 },
-    { field: "contact", headerName: "Contact", width: 180 },
-    { field: "plan", headerName: "Plan", width: 100 },
+    { field: "contact", headerName: "Contact", width: 120 },
+
     {
       field: "isActive",
       headerName: "Status",
@@ -54,7 +62,11 @@ const Members = () => {
       width: 90,
       renderCell: (params) => (
         <div className="actions">
-          <ActionBtn handleDelete={handleDelete} paramsId={params.row.id} />
+          <ActionBtn
+            handleDelete={handleDelete}
+            paramsId={params.row.id}
+            role={"member"}
+          />
         </div>
       ),
     },
@@ -62,7 +74,7 @@ const Members = () => {
 
   const dialogRef = useRef(null);
 
-  if (!showContent || isPending) return <Loading />;
+  if (isPending || !showContent) return <Loading />;
 
   return (
     <section className="users">
@@ -72,7 +84,7 @@ const Members = () => {
         </button>
       </div>
       <DataTable columns={columns} rows={members?.data} />
-      <MemberModal dialogRef={dialogRef} columns={columns} slug="member" />
+      <Modal dialogRef={dialogRef} columns={columns} slug="member" />
     </section>
   );
 };

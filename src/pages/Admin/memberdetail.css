@@ -1,0 +1,121 @@
+@import url('../../main.css');
+
+
+.member-details {
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* overflow-y: scroll; */
+}
+
+
+.member-bg-overlay {
+    width: 100%;
+    height: 100px;
+    padding: 15px 0px;
+    position: relative;
+    background-color: var(--text-green);
+    z-index: 1000;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+}
+
+.members-detail-icon {
+    position: absolute;
+    top: 50px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    width: 150px;
+    height: 150px;
+    left: 40px;
+    object-fit: cover;
+}
+
+.member-details a {
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--light-bg);
+    background-color: transparent;
+    width: 150px;
+    margin-left: 5px;
+    padding: 5px;
+    height: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.member-details a:hover {
+    background-color: rgba(197, 197, 197, 0.2);
+    gap: 15px;
+}
+
+.member-details__container {
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.membership-info__container {
+    margin-top: 2rem;
+}
+
+
+.member-name {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.member-email {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.membership-info {
+    display: flex;
+    gap: 15px;
+    margin: 1.5rem 0;
+    align-items: center;
+
+}
+
+.membership-info-items {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(17, 17, 17, 0.5);
+    padding-right: 10px;
+
+}
+
+.membership-info-items .opacity {
+    opacity: 0.6;
+    font-size: 13px;
+
+}
+
+.membership-date {
+    font-size: 30px;
+
+    font-weight: 600;
+}
+
+.opacityy {
+    opacity: 0.7;
+}
+
+.qr-code {
+    background-color: var(--light-bg);
+    height: fit-content;
+    padding: 10px;
+    /* padding: 10px; */
+}

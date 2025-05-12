@@ -9,8 +9,12 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
+import { ErrorBoundary } from "react-error-boundary";
+import { QueryErrorResetBoundary } from "@tanstack/react-query";
 import Loading from "./components/Loading/Loading";
+import Loading2 from "./components/Loading/Loading2";
 import Error from "./components/Error/Error";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import Root from "./components/Home/Root";
 import HomePage from "./pages/Home/HomePage";
 import Layout from "./components/Admin/Layout";
@@ -23,15 +27,30 @@ import Layout from "./components/Admin/Layout";
 // import Notifications from "./pages/Admin/Notifications";
 // import Profile from "./pages/Admin/Profile";
 // import Settings from "./pages/Admin/Settings";
+// import Login from "./pages/login/Login";
 
+//admin
 const Dashboard = lazy(() => import("./pages/Admin/Dashboard"));
 const Gym = lazy(() => import("./pages/Admin/Gym"));
 const Trainers = lazy(() => import("./pages/Admin/Trainers"));
+const TrainerDetails = lazy(() => import("./pages/Admin/TrainerDetails"));
 const Members = lazy(() => import("./pages/Admin/Members"));
 const MemberDetails = lazy(() => import("./pages/Admin/MemberDetails"));
 const Notifications = lazy(() => import("./pages/Admin/Notifications"));
 const Profile = lazy(() => import("./pages/Admin/Profile"));
 const Settings = lazy(() => import("./pages/Admin/Settings"));
+const Login = lazy(() => import("./pages/login/Login"));
+
+//members
+
+import MembersLayout from "./pages/Members/MembersLayout";
+const MemberOverview = lazy(() => import("./pages/Members/MemberOverview"));
+const MemberProfile = lazy(() => import("./pages/Members/MemberProfile"));
+const MemberNotifications = lazy(() =>
+  import("./pages/Members/MemberNotifications")
+);
+const MemberSettings = lazy(() => import("./pages/Members/MemberSettings"));
+const MemberGym = lazy(() => import("./pages/Members/MemberGym"));
 
 const App = () => {
   const client = new QueryClient();
@@ -48,7 +67,7 @@ const App = () => {
             element={<Trainers />}
             errorElement={<Error />}
           />
-          <Route path="members">
+          <Route path="member">
             <Route index element={<Members />} />
             <Route path=":memberId" element={<MemberDetails />} />
           </Route>
@@ -61,43 +80,120 @@ const App = () => {
           <Route
             index
             element={
-              <Suspense fallback={<Loading />}>
-                <Dashboard />
-              </Suspense>
+              <QueryErrorResetBoundary>
+                {({ reset }) => (
+                  <ErrorBoundary
+                    onReset={reset}
+                    fallbackRender={({ resetErrorBoundary }) => (
+                      <Error resetErrorBoundary={resetErrorBoundary} />
+                    )}
+                  >
+                    <Suspense fallback={<Loading />}>
+                      <Dashboard />
+                    </Suspense>
+                  </ErrorBoundary>
+                )}
+              </QueryErrorResetBoundary>
             }
           />
           <Route
             path="gym-management"
             element={
-              <Suspense fallback={<Loading />}>
-                <Gym />
-              </Suspense>
+              <QueryErrorResetBoundary>
+                {({ reset }) => (
+                  <ErrorBoundary
+                    onReset={reset}
+                    fallbackRender={({ resetErrorBoundary }) => (
+                      <Error resetErrorBoundary={resetErrorBoundary} />
+                    )}
+                  >
+                    <Suspense fallback={<Loading />}>
+                      <Gym />
+                    </Suspense>
+                  </ErrorBoundary>
+                )}
+              </QueryErrorResetBoundary>
             }
           />
-          <Route
-            path="trainers"
-            element={
-              <Suspense fallback={<Loading />}>
-                <Trainers />
-              </Suspense>
-            }
-            errorElement={<Error />}
-          />
-          <Route path="members">
+          <Route path="trainers">
             <Route
               index
               element={
-                <Suspense fallback={<Loading />}>
-                  <Members />
-                </Suspense>
+                <QueryErrorResetBoundary>
+                  {({ reset }) => (
+                    <ErrorBoundary
+                      onReset={reset}
+                      fallbackRender={({ resetErrorBoundary }) => (
+                        <Error resetErrorBoundary={resetErrorBoundary} />
+                      )}
+                    >
+                      <Suspense fallback={<Loading />}>
+                        <Trainers />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </QueryErrorResetBoundary>
+              }
+            />
+
+            <Route
+              path=":trainerId"
+              element={
+                <QueryErrorResetBoundary>
+                  {({ reset }) => (
+                    <ErrorBoundary
+                      onReset={reset}
+                      fallbackRender={({ resetErrorBoundary }) => (
+                        <Error resetErrorBoundary={resetErrorBoundary} />
+                      )}
+                    >
+                      <Suspense fallback={<Loading />}>
+                        <TrainerDetails />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </QueryErrorResetBoundary>
+              }
+            />
+          </Route>
+
+          <Route path="member">
+            <Route
+              index
+              element={
+                <QueryErrorResetBoundary>
+                  {({ reset }) => (
+                    <ErrorBoundary
+                      onReset={reset}
+                      fallbackRender={({ resetErrorBoundary }) => (
+                        <Error resetErrorBoundary={resetErrorBoundary} />
+                      )}
+                    >
+                      <Suspense fallback={<Loading />}>
+                        <Members />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </QueryErrorResetBoundary>
               }
             />
             <Route
               path=":memberId"
               element={
-                <Suspense fallback={<Loading />}>
-                  <MemberDetails />
-                </Suspense>
+                <QueryErrorResetBoundary>
+                  {({ reset }) => (
+                    <ErrorBoundary
+                      onReset={reset}
+                      fallbackRender={({ resetErrorBoundary }) => (
+                        <Error resetErrorBoundary={resetErrorBoundary} />
+                      )}
+                    >
+                      <Suspense fallback={<Loading />}>
+                        <MemberDetails />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </QueryErrorResetBoundary>
               }
             />
           </Route>
@@ -120,12 +216,67 @@ const App = () => {
           <Route
             path="settings"
             element={
-              <Suspense fallback={<Loading />}>
-                <Settings />
+              <QueryErrorResetBoundary>
+                {({ reset }) => (
+                  <ErrorBoundary
+                    onReset={reset}
+                    fallbackRender={({ resetErrorBoundary }) => (
+                      <Error resetErrorBoundary={resetErrorBoundary} />
+                    )}
+                  >
+                    <Suspense fallback={<Loading />}>
+                      <Settings />
+                    </Suspense>
+                  </ErrorBoundary>
+                )}
+              </QueryErrorResetBoundary>
+            }
+          />
+        </Route>
+        <Route path="member-account" element={<MembersLayout />}>
+          <Route
+            index
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberOverview />
+              </Suspense>
+            }
+          />
+          <Route
+            path="member-profile"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberProfile />
+              </Suspense>
+            }
+          />
+          <Route
+            path="member-notifications"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberNotifications />
+              </Suspense>
+            }
+          />
+          <Route
+            path="member-settings"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberSettings />
+              </Suspense>
+            }
+          />
+          <Route
+            path="posts"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberGym />
               </Suspense>
             }
           />
         </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
   );

@@ -1,15 +1,17 @@
 import React from "react";
 import "./Error.css";
 
-const Error = () => {
+const Error = ({ resetErrorBoundary }) => {
   return (
     <div className="error">
-      <div className="error-icon">
-        <i className="fa-solid fa-circle-exclamation"></i>
-      </div>
-      <div>
-        <h1>Oh no!</h1>
-        <h2>something went wrong ☹</h2>
+      <div className="error__container">
+        <div className="error-icon">
+          <i className="fa-solid fa-circle-exclamation"></i>
+          <h1>Something went wrong!!</h1>
+        </div>
+        <button onClick={resetErrorBoundary} className="reset-btn">
+          Try Again
+        </button>
       </div>
     </div>
   );

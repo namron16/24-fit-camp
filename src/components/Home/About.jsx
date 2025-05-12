@@ -7,10 +7,14 @@ const About = () => {
       <div className="about-us-container">
         <h2>About us</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nemo
-          fugit eaque quasi et atque, culpa magnam quidem architecto temporibus
-          doloremque? Ipsam recusandae, id asperiores at placeat minima non.
-          Tempore. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit praesentium nobis quo? Vero non exercitationem mollitia est alias aliquid, modi ipsa, qui tenetur consequatur reprehenderit distinctio quaerat reiciendis obcaecati necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur quas debitis quae quidem similique placeat omnis optio eum est at quia perferendis nam error deleniti vero expedita, natus eos.
+          At 24-Fit Camp, we believe that fitness is not just a goal, it's a
+          lifestyle. Nestled in the heart of Bonifacio Street, our gym was built
+          on the vision of creating a space where everyone, regardless of
+          fitness level, feels empowered to push their limits, transform their
+          bodies, and take control of their health. We are more than
+          just a gym. We're a fitness family. Whether you're a beginner looking
+          to take your first step or an athlete striving to improve performance,
+          we are here to guide, motivate, and support you every step of the way.
         </p>
       </div>
     </section>

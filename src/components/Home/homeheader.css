@@ -4,7 +4,7 @@
     padding: 10px 5px;
     font-size: 14px;
     position: relative;
-    background-color: transparent;
+    background-color: var(--dark-bg-);
     height: 10vh;
 }
 
@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    background-color: var(--dark-bg-);
 }
 
 
@@ -76,6 +76,10 @@
     transform: translateY(-5px);
 }
 
+.sign-in:active {
+    background-color: rgb(6, 100, 6);
+}
+
 
 @media (max-width: 903px) {
 
@@ -98,7 +102,7 @@
 
 }
 
-@media (max-width: 760px) {
+@media (max-width: 780px) {
 
 
     .home-logo img {
@@ -135,7 +139,6 @@
 
 @media (max-width: 760px) {
 
-
     .home-logo img {
         width: 25px;
         height: 25px;
@@ -167,6 +170,7 @@
     }
 
 }
+
 @media (max-width: 664px) {
 
     .home-header {
@@ -174,14 +178,15 @@
         width: 100%;
         font-size: 14px;
         position: relative;
-        background-color: transparent;
+
         height: 10vh;
     }
+
     .links {
         position: absolute;
         flex-direction: column;
         top: 10vh;
-        right: 0;
+        right: -1px;
         font-size: 1rem;
         align-items: center;
         padding: 2rem 0;
@@ -196,14 +201,13 @@
     }
 
 
-    .links.active-nav{
+    .links.active-nav {
         transform: translateX(0%);
     }
 
 
 
-    .burger-menu{
-        background-color: transparent;
+    .burger-menu {
         border: none;
         display: block;
     }
@@ -219,5 +223,29 @@
         width: 90px;
         margin-right: 0.5rem;
     }
+
+}
+
+@media (max-width: 380px) {
+
+    .home-header {
+        height: 5vh;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .home-logo img {
+        width: 20px;
+        height: 20px;
+       
+    }
+
+    .home-logo span {
+        margin-left: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+
+    }
+
 
 }

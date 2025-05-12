@@ -1,4 +1,4 @@
-@import url('../../main.css');
+@import url('../../../main.css');
 
 
 dialog {
@@ -34,7 +34,7 @@ dialog[open]::backdrop {
     }
 }
 
-.postModal{
+.postModal {
     margin: auto;
     border: none;
     width: 300px;
@@ -45,19 +45,19 @@ dialog[open]::backdrop {
     border-radius: 10px;
 }
 
-.post-modal-detail{
+.post-modal-detail {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.postModal img{
+.postModal img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
 
-.postModal input{
+.postModal input {
     border: none;
     background-color: #f3f3f3;
     padding: 10px;
@@ -80,7 +80,7 @@ dialog[open]::backdrop {
     color: var(--red-clr);
 }
 
-.add-post{
+.add-post {
     width: 100px;
     padding: 5px 10px;
     font-family: inherit;
@@ -91,7 +91,29 @@ dialog[open]::backdrop {
 }
 
 
-.active-post-btn{
-    background-color: rgb(16, 16, 201);
+.active-post-btn {
+    background-color: var(--blue-clr);
     color: var(--light-bg);
+}
+
+.post-img-vid {
+    justify-content: end;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+
+}
+
+.post-img-vid i {
+    font-size: 2rem;
+}
+
+.post-img{
+    color: var(--text-green);
+}
+
+.post-vid{
+    color: var(--red-clr);
 }

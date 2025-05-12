@@ -4,15 +4,16 @@ import { useDeleteTrainer } from "../../utils/FetchData";
 import DataTable from "../../components/Admin/DataTable";
 import Loading from "../../components/Loading/Loading";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
-import TrainerModal from "../../components/Admin/TrainerModal";
-import ActionBtn from "./ActionBtn";
+import Modal from "../../components/Admin/Modal";
+import ActionBtn from "../../components/Admin/ActionBtn";
 import usePageTransition from "../../utils/usePageTransition";
+import "./trainers.css";
 
 const Trainers = () => {
   const { deleteTrainer } = useDeleteTrainer();
   const { trainers } = useFetchTrainers();
   const dialogRef = useRef(null);
-  const { isPending, showContent } = usePageTransition(100);
+  const { isPending, showContent } = usePageTransition(0);
 
   const handleDelete = useCallback(
     (id) => {
@@ -36,11 +37,12 @@ const Trainers = () => {
       },
     },
     {
-      field: "name",
-      headerName: "Full Name",
-      width: 150,
-      type: "string",
-      editable: true,
+      field: "fullName",
+      headerName: "Full name",
+      sortable: false,
+      width: 160,
+      valueGetter: (value, row) =>
+        `${row.firstName || ""} ${row.lastName || ""}`,
     },
 
     {
@@ -63,7 +65,11 @@ const Trainers = () => {
       renderCell: (params) => {
         return (
           <div className="actions">
-            <ActionBtn handleDelete={handleDelete} paramsId={params.row.id} />
+            <ActionBtn
+              handleDelete={handleDelete}
+              paramsId={params.row.id}
+              role={"trainer"}
+            />
           </div>
         );
       },
@@ -81,7 +87,7 @@ const Trainers = () => {
       </div>
       <DataTable columns={columns} rows={trainers?.data} />
 
-      <TrainerModal dialogRef={dialogRef} columns={columns} slug={"trainer"} />
+      <Modal dialogRef={dialogRef} columns={columns} slug={"trainer"} />
     </section>
   );
 };

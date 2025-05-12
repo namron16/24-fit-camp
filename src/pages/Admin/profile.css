@@ -1,6 +1,6 @@
 @import url('../../main.css');
 
-.profile{
+.profile {
     position: relative;
     width: 100%;
     height: 100%;
@@ -8,7 +8,7 @@
     border-radius: 20px;
 }
 
-.profile-overlay{
+.profile-overlay {
     width: 100%;
     position: inherit;
     height: 30%;
@@ -16,8 +16,9 @@
     border-radius: 20px 20px 0 0;
 }
 
-.profile__img{
+.profile__img {
     background-color: var(--light-bg);
+    color: rgb(173, 173, 173);
     width: 150px;
     height: 150px;
     display: flex;
@@ -29,15 +30,14 @@
     left: 30px;
 }
 
-.profile__img i{
-    
+.profile__img i {
     font-size: 140px;
 }
 
-.edit-container{
+.edit-container {
     display: flex;
     justify-content: end;
-    margin: 1rem 2rem ;
+    margin: 1rem 2rem;
 }
 
 /* .edit__btn{
@@ -51,18 +51,18 @@
 } */
 
 
-.admin-detail__section{
+.admin-detail__section {
     display: flex;
     margin: 8% 3rem;
     flex-direction: column;
 }
 
-.admin-name{
+.admin-name {
     font-size: 25px;
     font-weight: 600;
 }
-.admin-email{
+
+.admin-email {
     font-size: 14px;
     font-weight: 300;
 }
-

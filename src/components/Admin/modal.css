@@ -9,6 +9,7 @@ dialog {
     border-radius: 10px;
     opacity: 0;
     transition: all 0.2s allow-discrete;
+    font-family: "Roboto Mono", sans-serif;
 }
 
 dialog::backdrop {
@@ -58,7 +59,7 @@ dialog h1 {
 
 .form-field {
     display: flex;
-    max-width: 400px;
+    max-width: 420px;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -72,7 +73,7 @@ form input {
     background-color: transparent;
     outline: none;
     border: 1px solid #11111144;
-    max-width: 200px;
+    max-width: 210px;
 
 }
 
@@ -97,7 +98,8 @@ form input {
     background-color: transparent;
     outline: none;
     border: 1px solid #11111144;
-    width: 190px;
+    width: 200px;
+    cursor: pointer;
     font-family: inherit;
 }
 

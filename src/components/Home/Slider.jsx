@@ -1,11 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import "./slider.css";
 import "swiper/css/bundle";
-import ScrollReveal from "scrollreveal";
 
 const Slider = ({ products }) => {
+  const slides = useMemo(() =>
+    products.map((product) => (
+      <SwiperSlide key={product.id} className="product-list">
+        <img src={product.img} alt={product.name} />
+      </SwiperSlide>
+    ))
+  );
   return (
     <Swiper
       modules={[Navigation, Pagination, A11y, Autoplay]}
@@ -18,11 +24,7 @@ const Slider = ({ products }) => {
       navigation
       pagination={{ clickable: true }}
     >
-      {products.map((product) => (
-        <SwiperSlide key={product.id} className="product-list">
-          <img src={product.img} alt={product.name} />
-        </SwiperSlide>
-      ))}
+      {slides}
     </Swiper>
   );
 };

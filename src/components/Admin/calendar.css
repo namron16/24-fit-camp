@@ -28,3 +28,15 @@
     /* border-radius: 50% !important; */
     background-color: var(--main-lightgreen) !important;
 }
+
+
+@media (max-width: 800px) {
+    .calendar {
+        position: relative;
+        grid-row: span 2 / span 2;
+        grid-column-start: 3;
+        
+    }
+
+
+}

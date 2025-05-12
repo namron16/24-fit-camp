@@ -3,10 +3,12 @@ import ToggleButton from "../../components/Admin/ToggleButton";
 import "./settings.css";
 import { useForm } from "@tanstack/react-form";
 import { useFetchAdmins } from "../../utils/FetchData";
+import { useEditAdmin } from "../../utils/FetchData";
 
 const Settings = () => {
-  // const { data: admins } = useFetchAdmins();
   const { admins } = useFetchAdmins();
+  const adminId = admins?.data[0]?.id;
+  const { editAdmin } = useEditAdmin(adminId);
 
   const form = useForm({
     defaultValues: admins?.data[0] || {
@@ -14,7 +16,15 @@ const Settings = () => {
       firstName: "",
       lastName: "",
     },
-    onSubmit: () => {},
+    onSubmit: async ({ value }) => {
+      try {
+        const editedAdmin = { ...value };
+        await editAdmin(editedAdmin);
+        alert("Admin updated successfully");
+      } catch (error) {
+        alert("Failed to upated admin");
+      }
+    },
   });
 
   return (
@@ -32,9 +42,9 @@ const Settings = () => {
             name="email"
             validators={{
               onChange: ({ value }) => {
-                const regex = /^[^\s@]+@[^s@]+\.[^\s@]+$/;
-                return regex.test(value) || value.trim() === ""
-                  ? "please enter valid email"
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return !regex.test(value.trim())
+                  ? "Please enter a valid email"
                   : undefined;
               },
             }}
@@ -76,7 +86,7 @@ const Settings = () => {
                   name="firstName"
                   value={field.state.value}
                   onChange={(e) => {
-                    handleChange(e.target.value);
+                    field.handleChange(e.target.value);
                   }}
                 />
                 {field.state.meta.errors.length > 0 && (

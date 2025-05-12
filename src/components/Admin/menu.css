@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 15px;
+    margin: 0px 15px 15px 15px;
     gap: 1rem;
 }
 
@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 10px;
+    padding: 1rem 10px;
 
 }
 
@@ -45,9 +45,10 @@
 
 .active-link {
     transform: translateX(10px);
-    background-color: #dddddd;
-    border-radius: 10px;
-    color: #fff;
+    background-color: var(--dark-bg-) !important;
+    border-radius: 30px;
+    color: var(--light-bg) !important;
+    transition: all 0.3s;
 }
 
 
@@ -100,13 +101,43 @@
 
 @media (max-width: 1200px) {
     .active-link {
-        transform: translateX(10px);
+        transform:none !important;
         background-color: #e9e9e9;
-        border-radius: 10px
+        border-radius: 10px;
+        transition: none !important;
     }
 
     .main-menu span,
     .settings span {
         font-size: 12px;
     }
+}
+
+@media (max-width: 1150px) {
+    .active-link {
+        transform: translateX(0px);
+        background-color: var(--dark-bg-);
+        border-radius: 30px;
+        color: var(--light-bg);
+        transition: none !important;
+    }
+
+    .main-menu span,
+    .settings span,
+    .menu a span {
+        display: none;
+    }
+
+    .main-menu,
+    .settings {
+        padding: 1rem 0px;
+    }
+
+    .menu a {
+        margin-right: 0px;
+        padding: 10px;
+    }
+
+
+
 }

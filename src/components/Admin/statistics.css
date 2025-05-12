@@ -1,8 +1,17 @@
 @import url('../../main.css');
 
-.stats-container {
+
+.stats {
+    position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
+    margin: -10px;
+    background-color: rgb(238, 236, 236);
+}
+
+.stats-container {
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-content: center;
@@ -28,7 +37,7 @@
 
 .stat-number {
     color: var(--main-lightgreen);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
 }
 
@@ -41,6 +50,33 @@
     justify-content: center;
 }
 
+.stat-1 {
+    border: 7px solid #168165;
+    border-radius: 50%;
+}
+
+.stat-1 i {
+    font-size: 1.5rem;
+}
+
+.stat-2 {
+    border: 7px solid var(--red-clr);
+    border-radius: 50%;
+}
+
+.stat-2 i {
+    font-size: 1.5rem;
+}
+
+.stat-3 {
+    border: 7px solid var(--blue-clr);
+    border-radius: 50%;
+}
+
+.stat-3 i {
+    font-size: 1.5rem;
+}
+
 
 
 @media (max-width: 1200px) {
@@ -48,4 +84,43 @@
     .stat-items {
         padding: 2rem 5px;
     }
+
+
+}
+
+@media (max-width: 800px) {
+
+
+    .stats-container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-content: center;
+        grid-template-rows: 200px 1fr 1fr;
+        gap: 1rem;
+    }
+
+
+}
+
+
+@media (max-width: 760px) {
+
+    .stat-items {
+        flex-wrap: wrap;
+        padding: 1rem 0px;
+    }
+
+    .stats-detail {
+
+        align-items: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+
+    }
+
+
 }

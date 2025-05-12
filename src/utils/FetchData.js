@@ -2,6 +2,7 @@ import {
   useMutation,
   useQueryClient,
   useSuspenseQuery,
+  useQuery,
 } from "@tanstack/react-query";
 
 import axios from "axios";
@@ -16,6 +17,16 @@ export const useFetchMembers = () => {
     staleTime: 1000 * 60 * 5,
   });
   return { members: data };
+};
+export const useFetchMember = () => {
+  const { data } = useQuery({
+    queryKey: ["members"],
+    queryFn: async () => {
+      return await axios.get("http://localhost:4000/members");
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+  return { member: data };
 };
 
 //fetch member by id
@@ -42,6 +53,18 @@ export const useFetchTrainers = () => {
 
   return { trainers: data };
 };
+export const useFetchTrainerDetails = (id) => {
+  //fetch trainers details
+  const { data } = useSuspenseQuery({
+    queryKey: ["trainers", id],
+    queryFn: async () => {
+      return await axios.get(`http://localhost:4000/trainers/${id}`);
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
+  return { trainerDetails: data };
+};
 
 export const useFetchAdmins = () => {
   //fetch admins
@@ -55,13 +78,14 @@ export const useFetchAdmins = () => {
 
   return { admins: data };
 };
+//fetch posts
 export const useFetchPosts = () => {
   const { data } = useSuspenseQuery({
     queryKey: ["posts"],
     queryFn: async () => {
       return await axios.get("http://localhost:4000/posts");
     },
-    staleTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 10,
   });
 
   return { posts: data };
@@ -98,6 +122,66 @@ export const useAddMember = () => {
   return { addMember };
 };
 
+//edit member
+export const useEditMember = (id) => {
+  const queryClient = useQueryClient();
+  const { mutateAsync: editMember } = useMutation({
+    mutationFn: (updatedMember) =>
+      axios.put(`http://localhost:4000/members/${id}`, updatedMember, {
+        headers: { "Content-Type": "application/json" },
+      }),
+    onMutate: async (updatedMember) => {
+      await queryClient.cancelQueries(["members", id]);
+      await queryClient.cancelQueries(["members"]);
+
+      const prevMemberData = queryClient.getQueryData(["members", id]);
+      const prevMembersData = queryClient.getQueryData(["members"]);
+
+      if (prevMemberData) {
+        queryClient.setQueryData(["members", id], {
+          ...prevMemberData,
+          ...updatedMember,
+        });
+      }
+
+      if (prevMembersData) {
+        if (prevMembersData.data && Array.isArray(prevMembersData.data)) {
+          queryClient.setQueryData(["members"], {
+            ...prevMembersData,
+            data: prevMembersData.data.map((member) =>
+              member.id === id ? { ...member, ...updatedMember } : member
+            ),
+          });
+        } else if (Array.isArray(prevMembersData)) {
+          queryClient.setQueryData(
+            ["members"],
+            prevMembersData.map((member) =>
+              member.id === id ? { ...member, ...updatedMember } : member
+            )
+          );
+        }
+      }
+
+      return { prevMemberData, prevMembersData };
+    },
+
+    onError: (_error, _vars, context) => {
+      if (context?.prevMemberData) {
+        queryClient.setQueryData(["members", id], context.prevMemberData);
+      }
+      if (context?.prevMembersData) {
+        queryClient.setQueryData(["members"], context.prevMembersData);
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["members", id]);
+      queryClient.invalidateQueries(["members"]);
+    },
+  });
+
+  return { editMember };
+};
+
 //add trainer
 export const useAddTrainer = () => {
   const queryClient = useQueryClient();
@@ -129,6 +213,123 @@ export const useAddTrainer = () => {
   return { addTrainer };
 };
 
+//edit trainer
+export const useEditTrainer = (id) => {
+  const queryClient = useQueryClient();
+  const { mutateAsync: editTrainer } = useMutation({
+    mutationFn: (newTrainer) =>
+      axios.put(`http://localhost:4000/trainers/${id}`, newTrainer, {
+        headers: { "Content-Type": "application/json" },
+      }),
+    onMutate: async (newTrainer) => {
+      await queryClient.cancelQueries(["trainers", id]);
+      await queryClient.cancelQueries(["trainers"]);
+
+      const prevTrainerData = queryClient.getQueryData(["trainers", id]);
+      const prevTrainersData = queryClient.getQueryData(["trainers"]);
+
+      if (prevTrainerData) {
+        queryClient.setQueryData(["trainers", id], {
+          ...prevTrainerData,
+          ...newTrainer,
+        });
+      }
+
+      if (prevTrainersData) {
+        queryClient.setQueryData(
+          ["trainers"],
+          prevTrainersData.map((trainer) =>
+            trainer.id === id ? { ...trainer, ...newTrainer } : trainer
+          )
+        );
+      }
+
+      return { prevTrainerData, prevTrainersData };
+    },
+
+    onError: (_error, _vars, context) => {
+      if (context?.prevTrainerData) {
+        queryClient.setQueryData(["trainers", id], context.prevTrainerData);
+      }
+      if (context?.prevTrainersData) {
+        queryClient.setQueryData(["trainers"], context.prevTrainersData);
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["trainers", id]);
+      queryClient.invalidateQueries(["trainers"]);
+    },
+  });
+
+  return { editTrainer };
+};
+
+//edit admin
+export const useEditAdmin = (id) => {
+  const queryClient = useQueryClient();
+  const { mutateAsync: editAdmin } = useMutation({
+    mutationFn: (newAdmin) =>
+      axios.put(`http://localhost:4000/admins/${id}`, newAdmin, {
+        headers: { "Content-Type": "application/json" },
+      }),
+    onMutate: async (newAdmin) => {
+      await queryClient.cancelQueries(["admins", id]);
+      await queryClient.cancelQueries(["admins"]);
+
+      const prevAdminData = queryClient.getQueryData(["admins", id]);
+      const prevAllAdminsData = queryClient.getQueryData(["admins"]);
+
+      // Optimistic update for individual admin
+      if (prevAdminData) {
+        queryClient.setQueryData(["admins", id], {
+          ...prevAdminData,
+          ...newAdmin,
+        });
+      }
+
+      // Optimistic update for all admins
+      const adminList = Array.isArray(prevAllAdminsData)
+        ? prevAllAdminsData
+        : Array.isArray(prevAllAdminsData?.data)
+        ? prevAllAdminsData.data
+        : [];
+
+      if (adminList.length > 0) {
+        const updatedAdmins = adminList.map((admin) =>
+          admin.id === id ? { ...admin, ...newAdmin } : admin
+        );
+
+        if (Array.isArray(prevAllAdminsData)) {
+          queryClient.setQueryData(["admins"], updatedAdmins);
+        } else {
+          queryClient.setQueryData(["admins"], {
+            ...prevAllAdminsData,
+            data: updatedAdmins,
+          });
+        }
+      }
+
+      return { prevAdminData, prevAllAdminsData };
+    },
+
+    onError: (_error, _vars, context) => {
+      if (context?.prevAdminData) {
+        queryClient.setQueryData(["admins", id], context.prevAdminData);
+      }
+      if (context?.prevAdminsData) {
+        queryClient.setQueryData(["admins"], context.prevAdminsData);
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["admins", id]);
+      queryClient.invalidateQueries(["admins"]);
+    },
+  });
+
+  return { editAdmin };
+};
+
+//add post
 export const useAddNewPost = () => {
   const queryClient = useQueryClient();
   const { mutate: addNewPost } = useMutation({
@@ -156,6 +357,37 @@ export const useAddNewPost = () => {
     },
   });
   return { addNewPost };
+};
+
+//delete post
+export const useDeletePost = () => {
+  const queryClient = useQueryClient();
+  const { mutate: deletePost } = useMutation({
+    mutationFn: (postId) => {
+      return axios.delete(`http://localhost:4000/posts/${postId}`);
+    },
+    onMutate: (postId) => {
+      queryClient.cancelQueries(["posts"]);
+      const prevPostData = queryClient.getQueryData(["posts"]);
+      queryClient.setQueryData(["posts"], (oldData) => {
+        return {
+          ...oldData,
+          data: oldData.data.filter((post) => post.id !== postId),
+        };
+      });
+      return {
+        prevPostData,
+      };
+    },
+    onError: (_error, _post, context) => {
+      queryClient.setQueryData(["posts"], context.prevPostData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["posts"]);
+    },
+  });
+
+  return { deletePost };
 };
 
 //delete member

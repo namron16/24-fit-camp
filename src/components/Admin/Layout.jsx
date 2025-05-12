@@ -1,17 +1,15 @@
 import React from "react";
-import { createContext, useState } from "react";
 import Header from "./Header";
 import Menu from "./Menu";
 import { Outlet } from "react-router-dom";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { useTheme } from "../../utils/useTheme";
+
 
 import "./layout.css";
 
-export const ThemeContext = createContext("light");
 const Layout = () => {
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = () => {
-    setTheme((theme) => (theme === "light" ? "dark" : "light"));
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

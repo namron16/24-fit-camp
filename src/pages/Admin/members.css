@@ -1,10 +1,11 @@
 @import url('../../main.css');
 
 
-.users{
+.users {
     position: relative;
     height: 100%;
 }
+
 .info {
     margin: 10px 0;
 }
@@ -31,6 +32,7 @@
 }
 
 .members-icon {
+    color: rgb(173, 173, 173);
     width: 30px;
     height: 30px;
     margin: 10px 0;

@@ -30,8 +30,8 @@ const Statistics = () => {
             <span className="stat-number">{totalMembers}</span>
             <span>Members</span>
           </div>
-          <div className="stat-item-icon">
-            <i className="fa-solid fa-users-rectangle"></i>
+          <div className="stat-item-icon stat-1">
+            <i className="fa-solid fa-users"></i>
           </div>
         </div>
         <div className="stat-items">
@@ -39,7 +39,7 @@ const Statistics = () => {
             <span className="stat-number">{totalTrainers}</span>
             <span>Trainers</span>
           </div>
-          <div className="stat-item-icon">
+          <div className="stat-item-icon stat-2">
             <i className="fa-solid fa-dumbbell"></i>
           </div>
         </div>
@@ -48,7 +48,7 @@ const Statistics = () => {
             <span className="stat-number">{activeMembers}</span>
             <span>Active Users</span>
           </div>
-          <div className="stat-item-icon">
+          <div className="stat-item-icon stat-3">
             <i className="fa-solid fa-bolt"></i>
           </div>
         </div>

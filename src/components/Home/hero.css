@@ -16,6 +16,7 @@
 }
 
 
+
 @keyframes hero-animation {
     0% {
         transform: translateY(-20px);
@@ -288,6 +289,7 @@
 
     .hero {
         height: 100vh;
+
     }
 
     .hero-intro h1 {
@@ -303,7 +305,9 @@
 
 
     .hero-intro p {
+        padding: 0 0.5rem;
         font-size: 12px;
+        opacity: 0.7;
     }
 
 

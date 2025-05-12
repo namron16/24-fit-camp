@@ -1,0 +1,142 @@
+@import url('../../main.css');
+
+.members-main {
+    margin: 0;
+    padding: 0 15%;
+    max-height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.member__container {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem 0px;
+    margin: 1rem 0px;
+    border-radius: 5px;
+
+}
+
+.members__menu {
+    position: relative;
+    width: 30%;
+    color: var(--dark-bg-);
+    margin-left: 1rem;
+}
+
+.members__content {
+    width: 70%;
+    height: 75vh;
+    margin-right: 2rem;
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* dark theme */
+
+#dark .member__container {
+    /* background-color: #1c1c1c; */
+    background-color: var(--dark-primary);
+    color: var(--light-bg);
+}
+
+#dark .member-header {
+    background-color: var(--dark-primary);
+    border-radius: 5px;
+}
+
+#dark .members__content {
+    background-color: var(--dark-secondary);
+}
+
+/* member menu */
+#dark .member-details-menu {
+    background-color: var(--dark-secondary);
+    border: 1px solid var(--light-gray);
+    color: var(--light-bg);
+}
+
+#dark .members-main {
+    background-color: var(--dark-primary);
+    color: var(--light-bg);
+}
+
+#dark .member-menu {
+    background-color: var(--dark-secondary);
+    border-radius: 10px;
+}
+
+#dark .member-main-menu a {
+    color: var(--light-bg);
+}
+
+#dark .member-main-menu a:hover {
+    background-color: var(--light-gray);
+}
+
+#dark .active {
+    background-color: var(--light-gray);
+}
+
+/* gym posts */
+#dark .post-card__container {
+    border: 1px solid var(--light-gray);
+}
+
+#dark .post-cards {
+    border-bottom: 1px solid var(--light-gray);
+    background-color: var(--dark-secondary);
+}
+
+/* member profile */
+#dark .members__form-items input {
+    background-color: transparent;
+    border: 1px solid var(--light-gray);
+    color: var(--light-bg);
+}
+
+@media (max-width: 880px) {
+    .members-main {
+        padding: 0 10%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .members-main {
+        padding: 0 5%;
+    }
+
+}
+
+@media (max-width: 530px) {
+    .members-main {
+        padding: 0 0%;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+    }
+
+
+    .member__container {
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .members__menu {
+        width: 95%;
+        margin-left: 0;
+    }
+
+    .members__content {
+        width: 95%;
+        height: 90vh;
+        margin: 0;
+    }
+}

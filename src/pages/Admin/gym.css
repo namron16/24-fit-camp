@@ -16,20 +16,17 @@
     position: relative;
     width: 100%;
     height: 30%;
-    background: url('../../assets/24fitcamp/24-fit-area-bg.png') no-repeat center;
-    background-color: rgba(17, 17, 17, 0.7);
-    background-size: cover;
-    background-blend-mode: darken;
+    background-color: var(--text-green);
     border-radius: 10px;
 }
 
-.gym-overlay img{
+.gym-overlay img {
     width: 150px;
     height: 150px;
     position: absolute;
     top: 50px;
     left: 20px;
-    border-radius: 50% ;
+    border-radius: 50%;
     border: 5px solid #f5f5f5;
 }
 
@@ -38,8 +35,16 @@
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
+
+
+.post-title {
+    font-weight: 500;
+    border-bottom: 2px solid var(--text-green);
+}
+
+
 
 .new-post {
     padding: 10px;
@@ -51,23 +56,24 @@
     justify-content: end;
 }
 
-.new-post img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-
-}
 
 .post__btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
     margin: 10px 0;
     padding: 10px;
-    font-size: 15px;
+    font-size: 1rem;
     font-family: inherit;
     cursor: pointer;
     border: none;
-    background-color: grey;
+    background-color: var(--text-green);
     color: var(--light-bg);
     border-radius: 20px;
+}
+
+.post__btn i {
+    font-size: 1.5rem;
 }
 
 .post-items__container {
@@ -98,6 +104,33 @@
     opacity: 0.8;
 }
 
+.post-menu {
+    position: relative;
+}
+
+.post-menu button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-menu button:hover {
+    background-color: var(--light-gray);
+}
+
+.post-date {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
 
 
 .post-items-detail img {
@@ -117,4 +150,59 @@
 
 .post-items span {
     font-size: 25px;
+}
+
+
+@media (max-width: 800px) {
+
+    .gym-overlay img {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: 100px;
+        left: 30px;
+    }
+
+    .posts {
+
+        margin-top: 0px;
+    }
+
+    .new-post {
+        padding: 8px;
+        margin: 5px 0;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: end;
+    }
+
+
+    .post__btn {
+        gap: 5px;
+        padding: 8px 10px;
+        font-size: 13px;
+
+    }
+
+    .post__btn i {
+        font-size: 13px;
+    }
+
+    .post-items-detail img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .post-items-detail span {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .post-items span {
+        font-size: 20px;
+    }
+
+
 }

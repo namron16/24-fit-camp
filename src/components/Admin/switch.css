@@ -1,0 +1,69 @@
+@import url('../../main.css');
+
+/* From Uiverse.io by AbanoubMagdy1 */
+.switch {
+  --circle-dim: 1.4em;
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+
+.slider-background {
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.4s;
+}
+
+.slider-background.active {
+  background-color: #9ed99c;
+  
+}
+
+.slider-background.inactive {
+  background-color: #f5aeae;
+  
+}
+
+
+.slider-thumb {
+  position: absolute;
+  height: var(--circle-dim);
+  width: var(--circle-dim);
+  border-radius: 50%;
+  bottom: 0.3em;
+  left: 0.3em;
+  transition: 0.4s;
+  z-index: 10;
+}
+
+
+.thumb-active {
+  background-color: #379237;
+  transform: translateX(1.5em);
+}
+
+.thumb-inactive {
+  background-color: #DC3535;
+  transform: translateX(0);
+}

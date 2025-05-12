@@ -1,6 +1,10 @@
 @import url('../../main.css');
 
 
+.about-us{
+    margin: 3em 0;
+}
+
 
 .about-us-container{
     padding: 1rem;

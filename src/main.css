@@ -10,14 +10,16 @@
 
 :root {
     --dark-bg-: #191A19;
-    --dark-primary: #222222;
+    --dark-primary: #1c1c1c;
     --dark-secondary: #272727;
+    --light-gray: #64646470;
     --dark-green-bg: #255F38;
     --text-green: #1F7D53;
     --main-green: #1E5128;
     --main-lightgreen: #1edb17;
     --light-bg: #fff;
     --red-clr: #d80a48;
+    --blue-clr: #88a5c2;
 }
 
 *::before,

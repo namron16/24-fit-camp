@@ -27,6 +27,7 @@
     "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",
     "react-error-boundary": "^5.0.0",
+    "react-qr-code": "^2.0.15",
     "react-router-dom": "^7.3.0",
     "recharts": "^2.15.1",
     "scrollreveal": "^4.0.9",

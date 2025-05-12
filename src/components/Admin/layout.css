@@ -1,7 +1,17 @@
 @import url('../../main.css');
 
+
+.main {
+    position: relative;
+    max-height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 .container {
-    overflow-y: hidden;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     gap: 3.5%;
     padding: 10px 0;
@@ -15,12 +25,15 @@
 .content-container {
     position: relative;
     width: 90%;
+    /* height: 100%; */
     height: 80vh;
     padding: 1rem;
     background-color: rgba(238, 236, 236, 0.5);
     border-radius: 15px;
     margin-right: 2rem;
 }
+
+/* dark theme */
 
 #dark {
     background-color: #111;
@@ -33,25 +46,46 @@
     border-radius: 10px;
 }
 
-#dark .stat-items,  #dark .charts {
+
+/* dashboard */
+
+#dark .stat-items,
+#dark .charts {
     color: var(--light-bg);
     box-shadow: none;
     background-color: var(--dark-secondary);
 }
 
-#dark .react-calendar{
+#dark .react-calendar {
     box-shadow: none;
 }
+
+
+/* main menu */
 
 #dark .menu,
 #dark .menu a {
     color: var(--light-bg);
+
+}
+
+#dark .active-link {
+    background-color: var(--text-green);
 }
 
 #dark .menu {
     background-color: var(--dark-primary);
     border-radius: 20px;
 }
+
+
+
+#dark .member-details {
+    background-color: var(--dark-secondary);
+    color: var(--light-bg);
+}
+
+/* settings */
 
 #dark .personal-details__section,
 #dark .settings-password__section,
@@ -63,4 +97,70 @@
 
 #dark .details__form-items input {
     color: var(--light-bg);
+}
+
+
+/* gym */
+#dark .gym {
+    color: var(--light-bg);
+}
+
+#dark .post-items__container {
+    background-color: var(--dark-secondary);
+    color: var(--light-bg);
+}
+
+/* notifications */
+
+#dark .notifications__section {
+    background-color: var(--dark-secondary);
+    color: var(--light-bg);
+}
+
+#dark .recent-activity {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+
+
+/* action-btn */
+#dark .burger span {
+    background: var(--light-bg);
+}
+
+#dark .members-icon {
+    color: var(--light-bg);
+    background-color: var(--light-bg);
+    border-radius: 50%;
+}
+
+
+@media (max-width: 1150px) {
+    .menu-container {
+        width: 50px;
+        color: var(--dark-bg-);
+    }
+
+
+}
+
+@media (max-width: 760px) {
+    .menu-container {
+        width: 40px;
+        color: var(--dark-bg-);
+    }
+
+
+    .content-container {
+        position: relative;
+        width: 85%;
+        /* height: 100%; */
+        height: 80vh;
+        padding: 1rem;
+        background-color: rgba(238, 236, 236, 0.5);
+        border-radius: 15px;
+        margin-right: 2rem;
+
+    }
+
 }

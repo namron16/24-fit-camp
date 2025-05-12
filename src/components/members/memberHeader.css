@@ -1,0 +1,101 @@
+@import url('../../main.css');
+
+.member-header {
+    height: 50px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-bg-);
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    background-color: var(--dark-bg-);
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    object-fit: cover;
+}
+
+.logo span {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.member-header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.member-icon {
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 500px) {
+
+    .logo {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 20px;
+        height: 20px;
+    
+    }
+
+    .logo span {
+        margin-left: 8px;
+        font-size: 13px;
+    }
+
+    .member-header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 10px;
+    }
+    
+
+    .user {
+        gap: 8px;
+    }
+    
+    .user span {
+        font-size: 12px;
+       
+    }
+    
+    
+    .member-icon {
+        font-size: 1.5rem;
+    }
+}

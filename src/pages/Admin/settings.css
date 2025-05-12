@@ -1,23 +1,25 @@
 @import url('../../main.css');
 
 
-.settings__section{
+.settings__section {
     position: relative;
     height: 100%;
+    font-family: "Roboto Mono", sans-serif;
 }
 
-.personal-details__section{
+.personal-details__section {
     position: relative;
     border: 1px solid var(--dark-bg-);
     padding: 1rem 2rem;
 }
 
-.details__form{
+.details__form {
     position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
 }
 
 
@@ -27,7 +29,8 @@
     justify-content: space-between;
     width: 350px;
 }
-.details__form-items input{
+
+.details__form-items input {
     font-family: inherit;
     border: 1px solid #b8b8b8;
     background-color: transparent;
@@ -35,17 +38,19 @@
     padding: 5px;
     width: 215px;
 }
-.details__form-items label{
+
+.details__form-items label {
     font-size: 15px;
     font-weight: 300;
 }
-.details__form-items em{
+
+.details__form-items em {
     font-size: 12px;
     color: var(--red-clr);
-    font-weight: 200;
+    font-weight: 500;
 }
 
-.settings__btn{
+.settings__btn {
     display: block;
     width: 100px;
     padding: 10px 1rem;
@@ -53,25 +58,28 @@
     background-color: var(--dark-bg-);
     color: var(--light-bg);
     border: none;
+    cursor: pointer;
 }
 
 
-.settings-password__section, .settings-theme__section{
+.settings-password__section,
+.settings-theme__section {
     margin: 1rem 0;
     border: 1px solid var(--dark-bg-);
     padding: 1rem 2rem;
 }
 
-.reset-password__btn{
+.reset-password__btn {
     padding: 10px;
     font-family: inherit;
     background-color: var(--dark-bg-);
     color: var(--light-bg);
     border: none;
     margin: 1rem 0;
+    cursor: pointer;
 }
 
-.settings-theme__section{
+.settings-theme__section {
     display: flex;
     gap: 1rem;
 }
