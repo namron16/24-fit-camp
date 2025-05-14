@@ -19,8 +19,8 @@ const Hero = () => {
             Get Started <i className="fa-solid fa-arrow-right"></i>
           </button>
         </div>
-        <img src={dumbellModel} alt="dumbell" className="dumbellModel" />
-        {/* <img src={stibin} alt="dumbell" className="dumbellModel" /> */}
+        {/* <img src={dumbellModel} alt="dumbell" className="dumbellModel" /> */}
+        <img src={stibin} alt="dumbell" className="dumbellModel" />
       </div>
     </section>
   );

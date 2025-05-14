@@ -10,13 +10,12 @@ const Switch = ({ memberId }) => {
 
   const { editMember } = useEditMember(memberId);
   const handleEditStatus = () => {
-    const newStatus = { ...memberDetails?.data, isActive: !isActive}
+    const newStatus = { ...memberDetails?.data, isActive: !isActive };
     editMember(newStatus);
   };
   return (
     <label className="switch">
       <input type="checkbox" checked={isActive} onChange={handleEditStatus} />
-      {/* <div className={`slider ${isActive ? "active" : "inactive"}`}></div> */}
       <div className="slider">
         <div
           className={`slider-background ${isActive ? "active" : "inactive"}`}

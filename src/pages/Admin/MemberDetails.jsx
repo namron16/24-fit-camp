@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useFetchMembersDetail } from "../../utils/FetchData";
+import userIcon from "../../assets/user-avatar-filled-alt.svg";
 import MemberHeader from "../../components/Admin/memberDetailComponent/MemberHeader";
 import MembershipDates from "../../components/Admin/memberDetailComponent/MembershipDates";
 import MembershipType from "../../components/Admin/memberDetailComponent/MembershipType";
-import QRCode from "react-qr-code";
 import "./memberdetail.css";
 
 const MemberDetails = () => {
@@ -25,18 +25,23 @@ const MemberDetails = () => {
     }),
     [memberDetails]
   );
-
-  const qrCodeValue = useMemo(() => {
-    return JSON.stringify(value.contact);
-  }, [value.contact]);
-
   return (
     <section className="member-details">
-      <MemberHeader profileImage={value.profileImage} />
+      <MemberHeader />
       <div className="member-details__container">
         <div className="member-info">
-          <span className="member-name">{`${value.firstName} ${value.lastName}`}</span>
-          <span className="member-email">{`${value.email}`}</span>
+          <div className="member-info-details">
+            <img
+              src={value.profileImage || userIcon}
+              className="members-detail-icon"
+              loading="lazy"
+              alt="Member avatar"
+            />
+            <div className="member-name-email">
+              <span className="member-name">{`${value.firstName} ${value.lastName}`}</span>
+              <span className="member-email">{`${value.email}`}</span>
+            </div>
+          </div>
           <div className="membership-info__container">
             <MembershipDates
               startDate={value.membershipStart}
@@ -44,15 +49,6 @@ const MemberDetails = () => {
             />
             <MembershipType type={value.type} plan={value.plan} />
           </div>
-        </div>
-
-        <div className="qr-code">
-          <QRCode
-            size={200}
-            bgColor="#fff"
-            fgColor="#111"
-            value={qrCodeValue}
-          />
         </div>
       </div>
     </section>
