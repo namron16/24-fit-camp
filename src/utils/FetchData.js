@@ -235,13 +235,25 @@ export const useEditTrainer = (id) => {
         });
       }
 
-      if (prevTrainersData) {
-        queryClient.setQueryData(
-          ["trainers"],
-          prevTrainersData.map((trainer) =>
-            trainer.id === id ? { ...trainer, ...newTrainer } : trainer
-          )
+      const trainerList = Array.isArray(prevTrainersData)
+        ? prevTrainersData
+        : Array.isArray(prevTrainersData?.data)
+        ? prevTrainersData.data
+        : [];
+
+      if (trainerList.length > 0) {
+        const updatedTrainers = trainerList.map((trainer) =>
+          trainer.id === id ? { ...trainer, ...newTrainer } : trainer
         );
+
+        if (Array.isArray(prevTrainersData)) {
+          queryClient.setQueryData(["trainers"], updatedTrainers);
+        } else {
+          queryClient.setQueryData(["trainers"], {
+            ...prevTrainersData,
+            data: updatedTrainers,
+          });
+        }
       }
 
       return { prevTrainerData, prevTrainersData };
@@ -279,7 +291,6 @@ export const useEditAdmin = (id) => {
       const prevAdminData = queryClient.getQueryData(["admins", id]);
       const prevAllAdminsData = queryClient.getQueryData(["admins"]);
 
-      // Optimistic update for individual admin
       if (prevAdminData) {
         queryClient.setQueryData(["admins", id], {
           ...prevAdminData,
@@ -287,7 +298,6 @@ export const useEditAdmin = (id) => {
         });
       }
 
-      // Optimistic update for all admins
       const adminList = Array.isArray(prevAllAdminsData)
         ? prevAllAdminsData
         : Array.isArray(prevAllAdminsData?.data)

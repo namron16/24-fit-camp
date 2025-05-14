@@ -132,7 +132,7 @@ const MemberProfile = () => {
           validators={{
             onChange: ({ value }) => {
               const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              return !regex.test(value) && value.trim() !== ""
+              return !regex.test(value.trim())
                 ? "please enter valid email"
                 : undefined;
             },

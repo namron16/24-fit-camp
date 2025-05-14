@@ -67,12 +67,11 @@
       "lastName": "asdasdas"
     },
     {
-      "id": "aeb8b83e-e696-4ddd-8533-2cce2d64b0da",
-      "name": "",
+      "firstName": "lebron",
+      "lastName": "james",
       "email": "kevin@example.com",
       "contact": "09778866554",
-      "firstName": "lebron",
-      "lastName": "innes"
+      "id": "aeb8b83e-e696-4ddd-8533-2cce2d64b0da"
     }
   ],
   "admins": [
