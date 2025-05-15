@@ -78,18 +78,6 @@ export const useFetchAdmins = () => {
 
   return { admins: data };
 };
-//fetch posts
-export const useFetchPosts = () => {
-  const { data } = useSuspenseQuery({
-    queryKey: ["posts"],
-    queryFn: async () => {
-      return await axios.get("http://localhost:4000/posts");
-    },
-    staleTime: 1000 * 60 * 10,
-  });
-
-  return { posts: data };
-};
 
 //add member
 export const useAddMember = () => {
@@ -337,67 +325,6 @@ export const useEditAdmin = (id) => {
   });
 
   return { editAdmin };
-};
-
-//add post
-export const useAddNewPost = () => {
-  const queryClient = useQueryClient();
-  const { mutate: addNewPost } = useMutation({
-    mutationFn: (newPost) => {
-      return axios.post(`http://localhost:4000/posts/`, newPost);
-    },
-    onMutate: (newPost) => {
-      queryClient.cancelQueries(["posts"]);
-      const prevPostData = queryClient.getQueryData(["posts"]);
-      queryClient.setQueryData(["posts"], (oldData) => {
-        return {
-          ...oldData,
-          data: [...oldData.data, { ...newPost }],
-        };
-      });
-      return {
-        prevPostData,
-      };
-    },
-    onError: (_error, _post, context) => {
-      queryClient.setQueryData(["posts"], context.prevPostData);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries(["posts"]);
-    },
-  });
-  return { addNewPost };
-};
-
-//delete post
-export const useDeletePost = () => {
-  const queryClient = useQueryClient();
-  const { mutate: deletePost } = useMutation({
-    mutationFn: (postId) => {
-      return axios.delete(`http://localhost:4000/posts/${postId}`);
-    },
-    onMutate: (postId) => {
-      queryClient.cancelQueries(["posts"]);
-      const prevPostData = queryClient.getQueryData(["posts"]);
-      queryClient.setQueryData(["posts"], (oldData) => {
-        return {
-          ...oldData,
-          data: oldData.data.filter((post) => post.id !== postId),
-        };
-      });
-      return {
-        prevPostData,
-      };
-    },
-    onError: (_error, _post, context) => {
-      queryClient.setQueryData(["posts"], context.prevPostData);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries(["posts"]);
-    },
-  });
-
-  return { deletePost };
 };
 
 //delete member

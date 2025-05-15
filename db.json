@@ -81,13 +81,5 @@
       "lastName": "Monster",
       "email": "cookiemonster@example.com"
     }
-  ],
-  "posts": [
-    {
-      "id": "b15e35ef-d27e-4745-abd4-3181736705a1",
-      "post": "how are you guys feeling today?",
-      "author": "24 Fit Camp",
-      "currDate": "2025-3-24"
-    }
   ]
 }

@@ -81,27 +81,6 @@
 
 }
 
-.dumbellModel {
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    width: 450px;
-    height: 500px;
-    animation: model-animation 1s ease-in;
-}
-
-
-@keyframes model-animation {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
 @media (max-width: 1350px) {
 
@@ -127,12 +106,6 @@
         text-transform: uppercase;
     }
 
-    .dumbellModel {
-        top: 80px;
-        right: -50px;
-        width: 400px;
-        height: 450px;
-    }
 }
 
 
@@ -152,12 +125,6 @@
         font-size: 4rem;
     }
 
-    .dumbellModel {
-        top: 150px;
-        right: -50px;
-        width: 400px;
-        height: 450px;
-    }
 }
 
 
@@ -177,12 +144,6 @@
         font-size: 3rem;
     }
 
-    .dumbellModel {
-        top: 200px;
-        right: -60px;
-        width: 350px;
-        height: 400px;
-    }
 }
 
 
@@ -224,14 +185,6 @@
         width: 120px;
     }
 
-    .dumbellModel {
-        position: absolute;
-        top: 320px;
-        right: 120px;
-        width: 200px;
-        height: 250px;
-    }
-
 
 }
 
@@ -269,14 +222,6 @@
         padding: 1rem 10px;
         font-size: 11px;
         width: 110px;
-    }
-
-    .dumbellModel {
-        position: absolute;
-        top: 350px;
-        right: 50px;
-        width: 250px;
-        height: 300px;
     }
 
 }
@@ -324,16 +269,6 @@
         padding: 1rem 10px;
         font-size: 11px;
         width: 110px;
-    }
-
-
-    .dumbellModel {
-        position: absolute;
-        top: 150%;
-        right: 20px;
-        width: 250px;
-        height: 300px;
-
     }
 
 
