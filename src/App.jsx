@@ -32,6 +32,12 @@ import Layout from "./components/Admin/Layout";
 //admin
 const Dashboard = lazy(() => import("./pages/Admin/Dashboard"));
 const Gym = lazy(() => import("./pages/Admin/Gym"));
+const GymOverview = lazy(() =>
+  import("./components/Admin/GymComponent/GymOverview")
+);
+const GymRewards = lazy(() =>
+  import("./components/Admin/GymComponent/GymRewards")
+);
 const Trainers = lazy(() => import("./pages/Admin/Trainers"));
 const TrainerDetails = lazy(() => import("./pages/Admin/TrainerDetails"));
 const Members = lazy(() => import("./pages/Admin/Members"));
@@ -114,7 +120,46 @@ const App = () => {
                 )}
               </QueryErrorResetBoundary>
             }
-          />
+          >
+            <Route
+              index
+              element={
+                <QueryErrorResetBoundary>
+                  {({ reset }) => (
+                    <ErrorBoundary
+                      onReset={reset}
+                      fallbackRender={({ resetErrorBoundary }) => (
+                        <Error resetErrorBoundary={resetErrorBoundary} />
+                      )}
+                    >
+                      <Suspense fallback={<Loading />}>
+                        <GymOverview />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </QueryErrorResetBoundary>
+              }
+            />
+            <Route
+              path="rewards"
+              element={
+                <QueryErrorResetBoundary>
+                  {({ reset }) => (
+                    <ErrorBoundary
+                      onReset={reset}
+                      fallbackRender={({ resetErrorBoundary }) => (
+                        <Error resetErrorBoundary={resetErrorBoundary} />
+                      )}
+                    >
+                      <Suspense fallback={<Loading />}>
+                        <GymRewards />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </QueryErrorResetBoundary>
+              }
+            />
+          </Route>
           <Route path="trainers">
             <Route
               index

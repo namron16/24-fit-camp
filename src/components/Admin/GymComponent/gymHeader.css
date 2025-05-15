@@ -1,0 +1,87 @@
+@import url('../../../main.css');
+
+
+.gym-header {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 1rem;
+    gap: 2rem;
+}
+
+.gym-introduction {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.gym-navigation {
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+    background-color: #c7c7c76c;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.gym-navigation a {
+    text-decoration: none;
+    color: var(--dark-bg-);
+    text-align: center;
+    width: 300px;
+    font-family: inherit;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--light-bg);
+    color: var(--dark-bg-);
+    font-weight: 600;
+}
+
+.inactive{
+    background-color: transparent;
+    opacity: 0.7;
+}
+
+
+.first-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+}
+
+.first-section p {
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+.gym-title {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.gym-title i {
+    color: var(--text-green);
+    font-size: 2rem;
+}
+
+.gym-title span {
+    color: var(--dark-bg-);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.second-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+}
+
+.second-section span {
+    opacity: 0.6;
+    font-weight: 400;
+}
