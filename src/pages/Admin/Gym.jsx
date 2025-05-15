@@ -1,5 +1,4 @@
-import React, { useRef, useMemo, useCallback } from "react";
-import { useFetchPosts } from "../../utils/FetchData";
+import React from "react";
 import PostModal from "../../components/Admin/GymComponent/PostModal";
 import Loading from "../../components/Loading/Loading";
 import usePageTransition from "../../utils/usePageTransition";
