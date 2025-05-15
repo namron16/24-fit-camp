@@ -1,0 +1,72 @@
+@import url('../../../main.css');
+
+.overview {
+    background-color: var(--light-bg);
+    position: relative;
+    padding: 10px;
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    border-radius: 10px;
+    height: 100%;
+}
+
+.overview-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* font-size: 1.2rem; */
+}
+
+.overview-title i {
+    color: darkorange;
+    /* font-size: 1rem; */
+}
+
+.overview-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.overview-header span {
+    opacity: 0.6;
+    font-size: .9rem;
+}
+
+.overview-content {
+    margin-top: 2rem;
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.overview-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.overview-details .rank {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--dark-gray);
+}
+
+.overview-details .name span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.points span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-green);
+
+}

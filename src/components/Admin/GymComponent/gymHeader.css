@@ -4,8 +4,8 @@
 .gym-header {
     display: flex;
     flex-direction: column;
-    padding: 10px 1rem;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 0px 10px;
 }
 
 .gym-introduction {

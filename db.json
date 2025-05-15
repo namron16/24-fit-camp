@@ -12,7 +12,8 @@
       "isActive": true,
       "membershipStart": "2025-05-05T11:43:45.279Z",
       "membershipEnd": "2025-11-05T11:43:45.279Z",
-      "notified": false
+      "notified": false,
+      "points": 100
     },
     {
       "id": "5c4ba5e0-adcd-4cef-91a9-f9f7d07cd614",
@@ -26,7 +27,8 @@
       "isActive": true,
       "membershipStart": "2025-05-05T11:45:36.146Z",
       "membershipEnd": "2026-05-05T11:45:36.146Z",
-      "notified": false
+      "notified": false,
+      "points": 100
     }
   ],
   "trainers": [
