@@ -19,7 +19,7 @@ const GymOverview = () => {
         <span>The Top 5 members with the highest gym points</span>
       </div>
       <div className="overview-content">
-        <div className="overview">
+        <div className="overview-container">
           {sortedMembers.map((member, index) => (
             <div className="overview-items" key={member.id}>
               <div className="overview-details">

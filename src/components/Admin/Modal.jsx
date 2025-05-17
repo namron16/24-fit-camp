@@ -46,6 +46,7 @@ const MemberModal = ({ dialogRef, slug }) => {
           membershipStart: membershipStart.toISOString(),
           membershipEnd: membershipEnd.toISOString(),
           notified: false,
+          points: 10,
         };
         addMember(newMember);
       } else if (slug === "trainer") {

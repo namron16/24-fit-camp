@@ -83,5 +83,20 @@
       "lastName": "Monster",
       "email": "cookiemonster@example.com"
     }
+  ],
+
+  "rewards": [
+    {
+      "id": "1",
+      "name": "Personal Training Session",
+      "description": "Get one free full session with a personal trainer",
+      "points": 100
+    },
+    {
+      "id": "2",
+      "name": "Shirt Discount",
+      "description": "Get 20% discount on your next purchase",
+      "points": 200
+    }
   ]
 }

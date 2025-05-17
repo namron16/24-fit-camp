@@ -6,7 +6,7 @@ import {
 } from "@tanstack/react-query";
 
 import axios from "axios";
-
+//members hooks
 //fetch members
 export const useFetchMembers = () => {
   const { data } = useSuspenseQuery({
@@ -39,44 +39,6 @@ export const useFetchMembersDetail = (id) => {
     staleTime: 1000 * 60 * 5,
   });
   return { memberDetails: data };
-};
-
-export const useFetchTrainers = () => {
-  //fetch trainers
-  const { data } = useSuspenseQuery({
-    queryKey: ["trainers"],
-    queryFn: async () => {
-      return await axios.get("http://localhost:4000/trainers");
-    },
-    staleTime: 1000 * 60 * 5,
-  });
-
-  return { trainers: data };
-};
-export const useFetchTrainerDetails = (id) => {
-  //fetch trainers details
-  const { data } = useSuspenseQuery({
-    queryKey: ["trainers", id],
-    queryFn: async () => {
-      return await axios.get(`http://localhost:4000/trainers/${id}`);
-    },
-    staleTime: 1000 * 60 * 5,
-  });
-
-  return { trainerDetails: data };
-};
-
-export const useFetchAdmins = () => {
-  //fetch admins
-  const { data } = useSuspenseQuery({
-    queryKey: ["admins"],
-    queryFn: async () => {
-      return await axios.get("http://localhost:4000/admins");
-    },
-    staleTime: 1000 * 60 * 5,
-  });
-
-  return { admins: data };
 };
 
 //add member
@@ -168,6 +130,63 @@ export const useEditMember = (id) => {
   });
 
   return { editMember };
+};
+
+//delete member
+export const useDeleteMember = () => {
+  const queryClient = useQueryClient();
+  const { mutate: deleteMember } = useMutation({
+    mutationFn: (memberId) => {
+      return axios.delete(`http://localhost:4000/members/${memberId}`);
+    },
+    onMutate: (memberId) => {
+      queryClient.cancelQueries(["members"]);
+      const prevPostData = queryClient.getQueryData(["members"]);
+      queryClient.setQueryData(["members"], (oldData) => {
+        return {
+          ...oldData,
+          data: oldData.data.filter((member) => member.id !== memberId),
+        };
+      });
+      return {
+        prevPostData,
+      };
+    },
+    onError: (_error, _post, context) => {
+      queryClient.setQueryData(["members"], context.prevPostData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["members"]);
+    },
+  });
+
+  return { deleteMember };
+};
+
+//trainers hook
+export const useFetchTrainers = () => {
+  //fetch trainers
+  const { data } = useSuspenseQuery({
+    queryKey: ["trainers"],
+    queryFn: async () => {
+      return await axios.get("http://localhost:4000/trainers");
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
+  return { trainers: data };
+};
+export const useFetchTrainerDetails = (id) => {
+  //fetch trainers details
+  const { data } = useSuspenseQuery({
+    queryKey: ["trainers", id],
+    queryFn: async () => {
+      return await axios.get(`http://localhost:4000/trainers/${id}`);
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
+  return { trainerDetails: data };
 };
 
 //add trainer
@@ -264,6 +283,51 @@ export const useEditTrainer = (id) => {
   return { editTrainer };
 };
 
+//delete trainer
+export const useDeleteTrainer = () => {
+  const queryClient = useQueryClient();
+  const { mutate: deleteTrainer } = useMutation({
+    mutationFn: (trainerId) => {
+      return axios.delete(`http://localhost:4000/trainers/${trainerId}`);
+    },
+    onMutate: (trainerId) => {
+      queryClient.cancelQueries(["trainers"]);
+      const prevPostData = queryClient.getQueryData(["trainers"]);
+      queryClient.setQueryData(["trainers"], (oldData) => {
+        return {
+          ...oldData,
+          data: oldData.data.filter((trainer) => trainer.id !== trainerId),
+        };
+      });
+      return {
+        prevPostData,
+      };
+    },
+    onError: (_error, _post, context) => {
+      queryClient.setQueryData(["trainers"], context.prevPostData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["trainers"]);
+    },
+  });
+
+  return { deleteTrainer };
+};
+
+//admins hook
+export const useFetchAdmins = () => {
+  //fetch admins
+  const { data } = useSuspenseQuery({
+    queryKey: ["admins"],
+    queryFn: async () => {
+      return await axios.get("http://localhost:4000/admins");
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
+  return { admins: data };
+};
+
 //edit admin
 export const useEditAdmin = (id) => {
   const queryClient = useQueryClient();
@@ -327,64 +391,15 @@ export const useEditAdmin = (id) => {
   return { editAdmin };
 };
 
-//delete member
-export const useDeleteMember = () => {
-  const queryClient = useQueryClient();
-  const { mutate: deleteMember } = useMutation({
-    mutationFn: (memberId) => {
-      return axios.delete(`http://localhost:4000/members/${memberId}`);
+//rewards hook
+export const useFetchRewards = () => {
+  const { data } = useSuspenseQuery({
+    queryKey: ["rewards"],
+    queryFn: async () => {
+      return await axios.get("http://localhost:4000/rewards");
     },
-    onMutate: (memberId) => {
-      queryClient.cancelQueries(["members"]);
-      const prevPostData = queryClient.getQueryData(["members"]);
-      queryClient.setQueryData(["members"], (oldData) => {
-        return {
-          ...oldData,
-          data: oldData.data.filter((member) => member.id !== memberId),
-        };
-      });
-      return {
-        prevPostData,
-      };
-    },
-    onError: (_error, _post, context) => {
-      queryClient.setQueryData(["members"], context.prevPostData);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries(["members"]);
-    },
+    staleTime: 1000 * 60 * 5,
   });
 
-  return { deleteMember };
-};
-
-//delete trainer
-export const useDeleteTrainer = () => {
-  const queryClient = useQueryClient();
-  const { mutate: deleteTrainer } = useMutation({
-    mutationFn: (trainerId) => {
-      return axios.delete(`http://localhost:4000/trainers/${trainerId}`);
-    },
-    onMutate: (trainerId) => {
-      queryClient.cancelQueries(["trainers"]);
-      const prevPostData = queryClient.getQueryData(["trainers"]);
-      queryClient.setQueryData(["trainers"], (oldData) => {
-        return {
-          ...oldData,
-          data: oldData.data.filter((trainer) => trainer.id !== trainerId),
-        };
-      });
-      return {
-        prevPostData,
-      };
-    },
-    onError: (_error, _post, context) => {
-      queryClient.setQueryData(["trainers"], context.prevPostData);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries(["trainers"]);
-    },
-  });
-
-  return { deleteTrainer };
+  return { rewards: data };
 };
