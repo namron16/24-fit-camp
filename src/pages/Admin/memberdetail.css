@@ -30,14 +30,14 @@
     border-radius: 50%;
 }
 
-.member-info-details{
+.member-info-details {
     display: flex;
     align-items: center;
     gap: 10px;
 
 }
 
-.member-name-email{
+.member-name-email {
     display: flex;
     flex-direction: column
 }
@@ -64,14 +64,14 @@
 }
 
 .member-details__container {
-
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    padding: 1rem;
 }
 
 .membership-info__container {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 
@@ -93,7 +93,7 @@
 
 .membership-info {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
     margin: 1.5rem 0;
     align-items: center;
 
@@ -109,7 +109,7 @@
 
 .membership-info-items .opacity {
     opacity: 0.6;
-    font-size: 13px;
+    font-size: 1rem;
 
 }
 

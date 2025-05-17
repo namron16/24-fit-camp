@@ -53,7 +53,7 @@ const MemberMenu = () => {
           <span>Overview</span>
         </NavLink>
         <NavLink
-          to={"posts"}
+          to={"rewards"}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <i className="fa-solid fa-dumbbell"></i>

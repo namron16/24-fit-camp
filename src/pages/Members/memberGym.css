@@ -3,49 +3,76 @@
 
 .member-gym {
     position: relative;
-    padding: 10px;
+    padding: 10px 1rem;
     overflow: hidden;
     width: 100%;
-
 }
 
-.gym-posts__container {
-    position: relative;
-    width: 96%;
-    display: flex;
-    flex-wrap: wrap;
-
-    overflow-x: hidden;
+.member-gym h1 {
+    font-weight: 600;
+    font-size: 2rem;
 }
 
-.gym-posts {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+.rewards-header {
     margin-top: 1rem;
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.member-gym .post-card__container {
-    position: relative;
-    width: 100%;
+.rewards-header span {
+    color: grey;
+    font-size: 15px;
+}
+
+.member-points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.current-points {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.current-points i {
+    color: orange;
 }
 
 
-@media (max-width: 670px) {
-    .member-gym .post-card__container img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .member-gym .post-card__container .post-card-details {
-        font-size: 13px;
-    }
-
-    .member-gym .post-card__container .post-cards {
-        font-size: 13px;
-    }
-
+.member-rewards__nav {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
 }
+
+.member-rewards__nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.active-gym-link {
+    background-color: var(--text-green);
+    color: var(--light-bg);
+    border: none;
+}
+
+.inactive-gym-link {
+    border: 1px solid var(--dark-bg-);
+    color: var(--dark-bg-);
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 670px) {}

@@ -57,6 +57,8 @@ const MemberNotifications = lazy(() =>
 );
 const MemberSettings = lazy(() => import("./pages/Members/MemberSettings"));
 const MemberGym = lazy(() => import("./pages/Members/MemberGym"));
+const MemberRewards = lazy(() => import("./pages/Members/MemberRewards"));
+const MemberPoints = lazy(() => import("./pages/Members/MemberPoints"));
 
 const App = () => {
   const client = new QueryClient();
@@ -312,13 +314,30 @@ const App = () => {
             }
           />
           <Route
-            path="posts"
+            path="rewards"
             element={
               <Suspense fallback={<Loading2 />}>
                 <MemberGym />
               </Suspense>
             }
-          />
+          >
+            <Route
+              index
+              element={
+                <Suspense fallback={<Loading2 />}>
+                  <MemberRewards />
+                </Suspense>
+              }
+            />
+            <Route
+              path="points-history"
+              element={
+                <Suspense fallback={<Loading2 />}>
+                  <MemberPoints />
+                </Suspense>
+              }
+            />
+          </Route>
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFoundPage />} />
