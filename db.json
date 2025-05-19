@@ -96,6 +96,12 @@
       "name": "Shirt Discount",
       "description": "Get 20% discount on your next purchase",
       "points": 200
+    },
+    {
+      "id": "3",
+      "name": "Free Membership",
+      "description": "Get one month free membership",
+      "points": 300
     }
   ]
 }

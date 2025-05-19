@@ -38,11 +38,8 @@ const MemberGym = () => {
   if (!showContent || isPending) return <Loading2 />;
   return (
     <section className="member-gym">
-      <h1>Fitness Rewards</h1>
       <div className="rewards-header">
-        <h2>
-          {value.firstName} {value.lastName}
-        </h2>
+        <h1>Fitness Rewards</h1>
         <span>Member since {formatDate}</span>
         <div className="member-points">
           <span>Current Points</span>
@@ -59,6 +56,7 @@ const MemberGym = () => {
             isActive ? "active-gym-link" : "inactive-gym-link"
           }
         >
+          <i className="fa-solid fa-gift"></i>
           Rewards
         </NavLink>
         <NavLink
@@ -67,6 +65,7 @@ const MemberGym = () => {
             isActive ? "active-gym-link" : "inactive-gym-link"
           }
         >
+          <i className="fa-solid fa-clock-rotate-left"></i>
           Points History
         </NavLink>
       </div>

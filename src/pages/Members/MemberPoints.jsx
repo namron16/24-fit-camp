@@ -1,8 +1,9 @@
 import React from 'react'
+import './memberPoints.css'
 
 const MemberPoints = () => {
   return (
-    <section>
+    <section className='member-rewards'>
       <h1>Points History</h1>
     </section>
   )
