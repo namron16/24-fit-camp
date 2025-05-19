@@ -1,0 +1,106 @@
+@import url('../../../main.css');
+
+
+dialog {
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.2s allow-discrete;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+dialog[open] {
+    opacity: 1;
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0
+    }
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.rewards-modal {
+    margin: auto;
+    border: none;
+    width: 400px;
+}
+
+.rewards-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-items label {
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.form-items input,
+textarea {
+    font-family: inherit;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 100px;
+    min-height: 10px;
+    padding: 10px 5px;
+    border: 1px solid rgba(17, 17, 17, 0.2);
+}
+
+.form-items em{
+    color: var(--red-clr);
+    font-size: 12px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-actions button {
+    font-family: inherit;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: 1px solid var(--light-gray);
+    color: var(--dark-bg-);
+    cursor: pointer;
+}
+
+.rewards-add-btn{
+    background-color: var(--main-lightgreen);
+    border: none;
+    color: var(--light-bg);
+    cursor: pointer;
+}

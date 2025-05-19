@@ -403,3 +403,34 @@ export const useFetchRewards = () => {
 
   return { rewards: data };
 };
+
+//add rewards
+export const useAddRewards = () => {
+  const queryClient = useQueryClient();
+  const { mutate: addRewards } = useMutation({
+    mutationFn: (newReward) => {
+      return axios.post(`http://localhost:4000/rewards`, newReward);
+    },
+    onMutate: (newReward) => {
+      queryClient.cancelQueries(["rewards"]);
+      const prevPostData = queryClient.getQueryData(["rewards"]);
+      queryClient.setQueryData(["rewards"], (oldData) => {
+        return {
+          ...oldData,
+          data: [...(oldData?.data || []), { ...newReward }],
+        };
+      });
+      return {
+        prevPostData,
+      };
+    },
+    onError: (_error, _post, context) => {
+      queryClient.setQueryData(["rewards"], context.prevPostData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["rewards"]);
+    },
+  });
+
+  return { addRewards };
+};
