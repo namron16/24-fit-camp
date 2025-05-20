@@ -11,29 +11,31 @@ const GymRewards = () => {
     rewardsRef.current.showModal();
   };
 
-  const displayedRewards = rewards?.data?.map((reward) => {
-    return (
-      <div className="rewards-items" key={reward.id}>
-        <div className="rewards-items__container">
-          <div className="rewards-details">
-            <span className="reward-name">{reward.name}</span>
-            <span className="reward-description">{reward.description}</span>
+  const displayedRewards = rewards?.data
+    ?.map((reward) => {
+      return (
+        <div className="rewards-items" key={reward.id}>
+          <div className="rewards-items__container">
+            <div className="rewards-details">
+              <span className="reward-name">{reward.name}</span>
+              <span className="reward-description">{reward.description}</span>
+            </div>
+            <div className="rewards-points">
+              <span>{reward.points} pts</span>
+            </div>
           </div>
-          <div className="rewards-points">
-            <span>{reward.points} pts</span>
+          <div className="rewards-actions">
+            <button className="edit-reward">
+              <i className="fa-solid fa-pen"></i>Edit
+            </button>
+            <button className="delete-reward">
+              <i className="fa-solid fa-trash"></i>Delete
+            </button>
           </div>
         </div>
-        <div className="rewards-actions">
-          <button className="edit-reward">
-            <i className="fa-solid fa-pen"></i>Edit
-          </button>
-          <button className="delete-reward">
-            <i className="fa-solid fa-trash"></i>Delete
-          </button>
-        </div>
-      </div>
-    );
-  }).reverse();
+      );
+    })
+    .reverse();
   return (
     <section className="rewards">
       <div className="rewards-header">

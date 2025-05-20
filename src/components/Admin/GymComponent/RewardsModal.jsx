@@ -27,7 +27,13 @@ const RewardsModal = ({ rewardsRef }) => {
   });
 
   const handleCloseModal = () => {
-    form.reset();
+    setTimeout(() => {
+      form.reset({
+        touched: false,
+        errors: false,
+      });
+    }, 0);
+
     rewardsRef.current?.close();
   };
   return (
@@ -120,7 +126,9 @@ const RewardsModal = ({ rewardsRef }) => {
           )}
         </form.Field>
         <div className="form-actions">
-          <button className="cancel-btn" onClick={handleCloseModal}>Cancel</button>
+          <button className="cancel-btn" onClick={handleCloseModal}>
+            Cancel
+          </button>
           <button type="submit" className="rewards-add-btn">
             Add Reward
           </button>
