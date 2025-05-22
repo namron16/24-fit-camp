@@ -60,7 +60,7 @@
 }
 
 .members__form {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Poppins', monospace;
     display: flex;
     flex-direction: column;
     /* max-width: 350px; */
@@ -151,7 +151,7 @@
         top: 50px;
         opacity: 1;
     }
-    
+
 }
 
 @keyframes fadeout {
@@ -164,7 +164,7 @@
         top: 40px;
         opacity: 0;
     }
-    
+
 }
 
 .member-profile-overlay {
