@@ -12,7 +12,7 @@ import "./members.css";
 const Members = () => {
   const { deleteMember } = useDeleteMember();
   const { members } = useFetchMembers();
-  const { isPending, showContent } = usePageTransition(0);
+  const { isPending, showContent } = usePageTransition(1000);
 
   const handleDelete = useCallback(
     (id) => {

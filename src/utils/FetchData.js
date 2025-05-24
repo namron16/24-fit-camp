@@ -8,37 +8,77 @@ import {
 import axios from "axios";
 //members hooks
 //fetch members
+
+// export const useFetchMembers = () => {
+//   const { data } = useSuspenseQuery({
+//     queryKey: ["members"],
+//     queryFn: async () => {
+//       return await axios.get("http://localhost:4000/members");
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+//   return { members: data };
+// };
+
 export const useFetchMembers = () => {
-  const { data } = useSuspenseQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["members"],
     queryFn: async () => {
       return await axios.get("http://localhost:4000/members");
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
+    keepPreviousData: true,
   });
-  return { members: data };
+  return { members: data, error, isLoading };
 };
+
+// export const useFetchMember = () => {
+//   const { data } = useQuery({
+//     queryKey: ["members"],
+//     queryFn: async () => {
+//       return await axios.get("http://localhost:4000/members");
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+//   return { member: data };
+// };
 export const useFetchMember = () => {
-  const { data } = useQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["members"],
     queryFn: async () => {
       return await axios.get("http://localhost:4000/members");
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
   });
-  return { member: data };
+  return { member: data, error, isLoading };
 };
 
 //fetch member by id
+// export const useFetchMembersDetail = (id) => {
+//   const { data } = useSuspenseQuery({
+//     queryKey: ["members", id],
+//     queryFn: async () => {
+//       return await axios.get(`http://localhost:4000/members/${id}`);
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+//   return { memberDetails: data };
+// };
 export const useFetchMembersDetail = (id) => {
-  const { data } = useSuspenseQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["members", id],
     queryFn: async () => {
       return await axios.get(`http://localhost:4000/members/${id}`);
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
   });
-  return { memberDetails: data };
+  return { memberDetails: data, error, isLoading };
 };
 
 //add member
@@ -164,29 +204,54 @@ export const useDeleteMember = () => {
 };
 
 //trainers hook
+// export const useFetchTrainers = () => {
+//   //fetch trainers
+//   const { data } = useSuspenseQuery({
+//     queryKey: ["trainers"],
+//     queryFn: async () => {
+//       return await axios.get("http://localhost:4000/trainers");
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+
+//   return { trainers: data };
+// };
 export const useFetchTrainers = () => {
-  //fetch trainers
-  const { data } = useSuspenseQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
       return await axios.get("http://localhost:4000/trainers");
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
   });
-
-  return { trainers: data };
+  return { trainers: data, error, isLoading };
 };
+
+// export const useFetchTrainerDetails = (id) => {
+//   //fetch trainers details
+//   const { data } = useSuspenseQuery({
+//     queryKey: ["trainers", id],
+//     queryFn: async () => {
+//       return await axios.get(`http://localhost:4000/trainers/${id}`);
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+
+//   return { trainerDetails: data };
+// };
 export const useFetchTrainerDetails = (id) => {
-  //fetch trainers details
-  const { data } = useSuspenseQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["trainers", id],
     queryFn: async () => {
       return await axios.get(`http://localhost:4000/trainers/${id}`);
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
   });
-
-  return { trainerDetails: data };
+  return { trainerDetails: data, error, isLoading };
 };
 
 //add trainer
@@ -315,17 +380,29 @@ export const useDeleteTrainer = () => {
 };
 
 //admins hook
+// export const useFetchAdmins = () => {
+//   //fetch admins
+//   const { data } = useSuspenseQuery({
+//     queryKey: ["admins"],
+//     queryFn: async () => {
+//       return await axios.get("http://localhost:4000/admins");
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+
+//   return { admins: data };
+// };
 export const useFetchAdmins = () => {
-  //fetch admins
-  const { data } = useSuspenseQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["admins"],
     queryFn: async () => {
       return await axios.get("http://localhost:4000/admins");
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
   });
-
-  return { admins: data };
+  return { admins: data, error, isLoading };
 };
 
 //edit admin
@@ -392,16 +469,28 @@ export const useEditAdmin = (id) => {
 };
 
 //rewards hook
+// export const useFetchRewards = () => {
+//   const { data } = useSuspenseQuery({
+//     queryKey: ["rewards"],
+//     queryFn: async () => {
+//       return await axios.get("http://localhost:4000/rewards");
+//     },
+//     staleTime: 1000 * 60 * 5,
+
+//   });
+
+//   return { rewards: data };
+// };
 export const useFetchRewards = () => {
-  const { data } = useSuspenseQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["rewards"],
     queryFn: async () => {
       return await axios.get("http://localhost:4000/rewards");
     },
     staleTime: 1000 * 60 * 5,
+    keepPreviousData: true,
   });
-
-  return { rewards: data };
+  return { rewards: data, error, isLoading };
 };
 
 //add rewards

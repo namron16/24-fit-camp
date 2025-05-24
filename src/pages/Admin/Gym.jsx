@@ -6,7 +6,7 @@ import usePageTransition from "../../utils/usePageTransition";
 import "./gym.css";
 
 const Gym = () => {
-  const { isPending, showContent } = usePageTransition(500);
+  const { isPending, showContent } = usePageTransition(1000);
 
   if (isPending || !showContent) return <Loading />;
 

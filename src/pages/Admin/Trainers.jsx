@@ -13,7 +13,7 @@ const Trainers = () => {
   const { deleteTrainer } = useDeleteTrainer();
   const { trainers } = useFetchTrainers();
   const dialogRef = useRef(null);
-  const { isPending, showContent } = usePageTransition(0);
+  const { isPending, showContent } = usePageTransition(1000);
 
   const handleDelete = useCallback(
     (id) => {

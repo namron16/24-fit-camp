@@ -20,7 +20,7 @@ const GymOverview = () => {
       </div>
       <div className="overview-content">
         <div className="overview-container">
-          {sortedMembers.map((member, index) => (
+          {sortedMembers?.map((member, index) => (
             <div className="overview-items" key={member.id}>
               <div className="overview-details">
                 <div className="rank">#{index + 1}</div>
@@ -28,7 +28,9 @@ const GymOverview = () => {
                   <img src={member.img || icon} alt={member.firstName} />
                 </div>
                 <div className="name">
-                  <span>{member.firstName} {member.lastName}</span>
+                  <span>
+                    {member.firstName} {member.lastName}
+                  </span>
                 </div>
               </div>
               <div className="points">

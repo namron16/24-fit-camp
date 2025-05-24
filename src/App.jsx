@@ -107,20 +107,9 @@ const App = () => {
           <Route
             path="gym-management"
             element={
-              <QueryErrorResetBoundary>
-                {({ reset }) => (
-                  <ErrorBoundary
-                    onReset={reset}
-                    fallbackRender={({ resetErrorBoundary }) => (
-                      <Error resetErrorBoundary={resetErrorBoundary} />
-                    )}
-                  >
-                    <Suspense fallback={<Loading />}>
-                      <Gym />
-                    </Suspense>
-                  </ErrorBoundary>
-                )}
-              </QueryErrorResetBoundary>
+              <Suspense fallback={<Loading />}>
+                <Gym />
+              </Suspense>
             }
           >
             <Route

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import Header from "./Header";
 import Menu from "./Menu";
 import { Outlet } from "react-router-dom";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { useTheme } from "../../utils/useTheme";
-
 
 import "./layout.css";
 
@@ -28,4 +27,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default memo(Layout);
