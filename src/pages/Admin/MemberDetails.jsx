@@ -30,16 +30,21 @@ const MemberDetails = () => {
       <MemberHeader />
       <div className="member-details__container">
         <div className="member-info">
-          <div className="member-info-details">
-            <img
-              src={value.profileImage || userIcon}
-              className="members-detail-icon"
-              loading="lazy"
-              alt="Member avatar"
-            />
-            <div className="member-name-email">
-              <span className="member-name">{`${value.firstName} ${value.lastName}`}</span>
-              <span className="member-email">{`${value.email}`}</span>
+          <div className="member-info-details__container">
+            <div className="member-info-details">
+              <img
+                src={value.profileImage || userIcon}
+                className="members-detail-icon"
+                loading="lazy"
+                alt="Member avatar"
+              />
+              <div className="member-name-email">
+                <span className="member-name">{`${value.firstName} ${value.lastName}`}</span>
+                <span className="member-email">{`${value.email}`}</span>
+              </div>
+            </div>
+            <div className="update-membership">
+              <button className="update-membership__btn">Update Membership</button>
             </div>
           </div>
           <div className="membership-info__container">

@@ -30,11 +30,29 @@
     border-radius: 50%;
 }
 
-.member-info-details {
+.member-info-details__container {
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: space-between;
 
+}
+
+.update-membership__btn{
+    padding: 10px 1rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--text-green);
+    color: var(--light-bg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.member-info-details{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .member-name-email {
