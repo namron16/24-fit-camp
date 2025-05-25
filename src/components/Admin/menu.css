@@ -45,17 +45,17 @@
 
 .main-menu .active-link {
     transform: translateX(10px);
-    background-color: var(--dark-bg-) !important;
+    background-color: var(--dark-bg-);
     border-radius: 30px;
-    color: var(--light-bg) !important;
+    color: var(--light-bg);
     transition: all 0.3s;
 }
 
 .settings .active-link {
     transform: translateX(10px);
-    background-color: var(--dark-bg-) !important;
+    background-color: var(--dark-bg-);
     border-radius: 30px;
-    color: var(--light-bg) !important;
+    color: var(--light-bg);
     transition: all 0.3s;
 }
 

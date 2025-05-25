@@ -16,70 +16,35 @@
       "points": 100
     },
     {
-      "id": "5c4ba5e0-adcd-4cef-91a9-f9f7d07cd614",
+      "id": "3a19f215-f6ba-4591-9eb0-415c2c61f1f8",
       "name": "",
-      "email": "jeff@example.com",
-      "contact": "09786655674",
-      "firstName": "lebron",
-      "lastName": "james",
-      "type": "student",
-      "plan": "12 months",
+      "email": "nam@example.com",
+      "contact": "09778866554",
+      "firstName": "Nam",
+      "lastName": "Dale",
+      "type": "regular",
+      "plan": "3 months",
       "isActive": true,
-      "membershipStart": "2025-05-05T11:45:36.146Z",
-      "membershipEnd": "2026-05-05T11:45:36.146Z",
+      "membershipStart": "2025-05-25T12:33:31.992Z",
+      "membershipEnd": "2025-08-25T12:33:31.992Z",
       "notified": false,
-      "points": 100
+      "points": 10
     }
   ],
   "trainers": [
     {
-      "id": "1",
-      "firstName": "Akira",
-      "lastName": "Yatoshi",
-      "contact": "09557878334",
-      "email": "nam@gmail.com"
-    },
-    {
-      "id": "2",
-      "firstName": "Vie",
-      "lastName": "lought",
-      "contact": "09557878334",
-      "email": "nam@gmail.com"
-    },
-    {
-      "id": "3",
-      "firstName": "Charles",
-      "lastName": "Xavier",
-      "contact": "09557878334",
-      "email": "nam@gmail.com"
-    },
-    {
-      "firstName": "lebron",
-      "lastName": "james",
-      "email": "brandon@example.com",
-      "contact": "099778866",
-      "id": "a6621669-6798-449e-bb86-cc697741fcc9"
-    },
-    {
-      "id": "9206baf4-3e4d-4a8e-9e26-42f34811929d",
+      "id": "9c9575d6-33ee-401f-a334-95f67fc2f3be",
       "name": "",
-      "email": "nam@example.com",
-      "contact": "09786655674",
-      "firstName": "asdasd",
-      "lastName": "asdasdas"
-    },
-    {
-      "firstName": "lebron",
-      "lastName": "james",
-      "email": "kevin@example.com",
+      "email": "charles@example.com",
       "contact": "09778866554",
-      "id": "aeb8b83e-e696-4ddd-8533-2cce2d64b0da"
+      "firstName": "Charles",
+      "lastName": "Xavier"
     }
   ],
   "admins": [
     {
       "id": "1",
-      "firstName": "Cookie",
+      "firstName": "Cookies",
       "lastName": "Monster",
       "email": "cookiemonster@example.com"
     }
@@ -102,6 +67,12 @@
       "name": "Free Membership",
       "description": "Get one month free membership",
       "points": 300
+    },
+    {
+      "id": "90707611-d88d-4135-889f-1ff3ea8f830f",
+      "name": "Product Discount",
+      "description": "30% discount for any T-Shirt Merch in you favor",
+      "points": 200
     }
   ]
 }

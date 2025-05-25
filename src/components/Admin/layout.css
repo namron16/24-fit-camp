@@ -110,6 +110,59 @@
     color: var(--light-bg);
 }
 
+
+/* gym-rewards */
+#dark .gym-header span,
+#dark .gym-header a,
+#dark .gym-header p {
+    color: var(--light-bg);
+}
+
+#dark .gym-header i {
+    color: var(--main-lightgreen);
+}
+
+#dark .gym-navigation {
+    background-color: var(--light-bg);
+}
+
+#dark .gym-navigation a {
+    color: var(--dark-bg-);
+}
+
+#dark .gym-navigation .active {
+    background-color: var(--text-green);
+    color: var(--light-bg);
+}
+
+#dark .overview {
+    background-color: var(--dark-secondary);
+    color: var(--light-bg);
+}
+
+#dark .overview-items .points span {
+    color: var(--main-lightgreen);
+}
+
+#dark .rewards {
+    background-color: var(--dark-secondary);
+    color: var(--light-bg);
+}
+
+#dark .rewards-items {
+    /* border: 1px solid #fff; */
+    background-color: var(--dark-primary);
+}
+
+#dark .edit-reward {
+    background-color: var(--light-bg);
+}
+
+#dark .delete-reward {
+    background-color: var(--dark-bg-);
+    /* border: none; */
+}
+
 /* notifications */
 
 #dark .notifications__section {
@@ -133,6 +186,7 @@
     background-color: var(--light-bg);
     border-radius: 50%;
 }
+
 
 
 @media (max-width: 1150px) {

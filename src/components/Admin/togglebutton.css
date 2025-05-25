@@ -7,10 +7,12 @@
   font-size: 13px;
   position: relative;
   display: inline-block;
-  width: 4em;
-  height: 2.2em;
+  /* width: 4rem;
+  height: 2.2em; */
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 3px 5px;
+  border: 1px solid var(--light-bg);
 }
 
 /* Hide default HTML checkbox */
@@ -37,8 +39,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.2em;
-  width: 1.2em;
+  height: 1.5em;
+  width: 1.5em;
   border-radius: 20px;
   left: 0.5em;
   bottom: 0.5em;
