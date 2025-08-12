@@ -4,7 +4,7 @@ import MemberMenu from "../../components/members/MemberMenu";
 import { Outlet } from "react-router-dom";
 import "./memberLayout.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { useTheme } from "../../utils/useMemberTheme";
+import { useTheme } from "../../hooks/useMemberTheme";
 
 const MembersLayout = () => {
   const { theme, toggleTheme } = useTheme();

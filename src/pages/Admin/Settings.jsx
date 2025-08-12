@@ -2,8 +2,8 @@ import React from "react";
 import ToggleButton from "../../components/Admin/ToggleButton";
 import "./settings.css";
 import { useForm } from "@tanstack/react-form";
-import { useFetchAdmins } from "../../utils/FetchData";
-import { useEditAdmin } from "../../utils/FetchData";
+import { useFetchAdmins } from "../../hooks/FetchData";
+import { useEditAdmin } from "../../hooks/FetchData";
 
 const Settings = () => {
   const { admins } = useFetchAdmins();

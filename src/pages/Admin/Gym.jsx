@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import GymHeader from "../../components/Admin/GymComponent/GymHeader";
 import Loading from "../../components/Loading/Loading";
-import usePageTransition from "../../utils/usePageTransition";
+import usePageTransition from "../../hooks/usePageTransition";
 import "./gym.css";
 
 const Gym = () => {

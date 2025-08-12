@@ -26,7 +26,6 @@ const DataTable = ({ columns, rows }) => {
           },
         }}
         sx={{
-          
           ".MuiDataGrid-cell": {
             overflow: "visible",
           },
@@ -83,10 +82,8 @@ const DataTable = ({ columns, rows }) => {
               color: theme === "dark" ? "var(--text-green)" : "#1565c0", // checked color
             },
           },
-
         }}
         pageSizeOptions={[5]}
-        checkboxSelection
         disableRowSelectionOnClick
         disableColumnFilter
         disableDensitySelector

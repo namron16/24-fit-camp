@@ -36,3 +36,38 @@ body {
     color: var(--dark-bg-);
     scroll-behavior: smooth;
 }
+
+
+dialog {
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.2s allow-discrete;
+    font-family: "Poppins", sans-serif;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+dialog[open] {
+    opacity: 1;
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0
+    }
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}

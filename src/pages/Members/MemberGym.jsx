@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./memberGym.css";
 import Loading2 from "../../components/Loading/Loading2";
-import { useFetchMember } from "../../utils/FetchData";
-import { useFetchRewards } from "../../utils/FetchData";
+import { useFetchMember } from "../../hooks/FetchData";
+import { useFetchRewards } from "../../hooks/FetchData";
 
-import usePageTransition from "../../utils/usePageTransition";
+import usePageTransition from "../../hooks/usePageTransition";
 
 const MemberGym = () => {
   const { member } = useFetchMember();

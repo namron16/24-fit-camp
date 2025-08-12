@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import "./memberOverview.css";
 import QRCode from "react-qr-code";
-import { useFetchMember } from "../../utils/FetchData";
+import { useFetchMember } from "../../hooks/FetchData";
 import MembershipType from "../../components/Admin/memberDetailComponent/MembershipType";
 import MembershipDates from "../../components/Admin/memberDetailComponent/MembershipDates";
-import usePageTransition from "../../utils/usePageTransition";
+import usePageTransition from "../../hooks/usePageTransition";
 import Loading2 from "../../components/Loading/Loading2";
 
 const MemberOverview = () => {

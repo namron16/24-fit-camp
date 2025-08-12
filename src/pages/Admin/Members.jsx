@@ -1,12 +1,11 @@
 import React, { useRef, useMemo, useCallback } from "react";
-import ActionBtn from "../../components/Admin/ActionBtn";
+import { Link } from "react-router-dom";
 import DataTable from "../../components/Admin/DataTable";
 import Loading from "../../components/Loading/Loading";
-import Modal from "../../components/Admin/Modal";
-import { useFetchMembers, useDeleteMember } from "../../utils/FetchData";
+import { useFetchMembers, useDeleteMember } from "../../hooks/FetchData";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
-import usePageTransition from "../../utils/usePageTransition";
-
+import usePageTransition from "../../hooks/usePageTransition";
+import MembershipModal from "../../components/Admin/modals/MembershipModal";
 import "./members.css";
 
 const Members = () => {
@@ -62,11 +61,17 @@ const Members = () => {
       width: 90,
       renderCell: (params) => (
         <div className="actions">
-          <ActionBtn
-            handleDelete={handleDelete}
-            paramsId={params.row.id}
-            role={"member"}
-          />
+          <Link to={`${params.row.id}`}>
+            <button className="view">
+              <i className="fa-solid fa-expand"></i>
+            </button>
+          </Link>
+          <button
+            onClick={() => handleDelete(params.row.id)}
+            className="delete"
+          >
+            <i className="fa-solid fa-trash"></i>
+          </button>
         </div>
       ),
     },
@@ -84,7 +89,8 @@ const Members = () => {
         </button>
       </div>
       <DataTable columns={columns} rows={members?.data} />
-      <Modal dialogRef={dialogRef} columns={columns} slug="member" />
+      {/* <Modal dialogRef={dialogRef} columns={columns} slug="member" /> */}
+      <MembershipModal dialogRef={dialogRef} />
     </section>
   );
 };

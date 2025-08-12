@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
 import "./memberProfile.css";
 import { useForm } from "@tanstack/react-form";
-import { useFetchMember, useEditMember } from "../../utils/FetchData";
-import usePageTransition from "../../utils/usePageTransition";
+import { useFetchMember, useEditMember } from "../../hooks/FetchData";
+import usePageTransition from "../../hooks/usePageTransition";
 import Loading2 from "../../components/Loading/Loading2";
 
 const MemberProfile = () => {

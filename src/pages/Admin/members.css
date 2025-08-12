@@ -22,6 +22,10 @@
     font-family: inherit;
 }
 
+.info button:hover{
+    background-color: rgb(5, 146, 5);
+}
+
 
 .active-status {
     color: var(--main-lightgreen);
@@ -37,18 +41,21 @@
     height: 30px;
     margin: 10px 0;
 }
+.actions{
+    display: flex;
+    justify-content: space-around;
+}
 
 .actions button,
 .actions a {
+    background-color: transparent;
     border: none;
-    margin-right: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
-.edit {
-    color: var(--dark-bg-);
-    margin-right: 1.5rem;
+.view {
+    color: var(--blue-clr);
 }
 
 .delete {

@@ -1,34 +1,35 @@
 {
   "members": [
     {
-      "id": "09c505ee-a9e2-4dd6-9628-f17ea98f87ac",
-      "name": "",
-      "email": "johndoe@example.com",
-      "contact": "09778866554",
-      "firstName": "John",
-      "lastName": "Doe",
-      "type": "student",
-      "plan": "6 months",
-      "isActive": true,
-      "membershipStart": "2025-05-05T11:43:45.279Z",
-      "membershipEnd": "2025-11-05T11:43:45.279Z",
-      "notified": false,
-      "points": 100
-    },
-    {
-      "id": "3a19f215-f6ba-4591-9eb0-415c2c61f1f8",
-      "name": "",
-      "email": "nam@example.com",
-      "contact": "09778866554",
+      "id": "1997c01a-cade-4f05-b64d-01221d19983f",
       "firstName": "Nam",
       "lastName": "Dale",
-      "type": "regular",
-      "plan": "3 months",
+      "email": "nam@example.com",
+      "contact": "09876543212",
+      "program": [["athlete training"]],
+      "type": "student",  
+      "plan": "3 month",
+      "sessionPlans": [
+        {
+          "program": "athlete training",
+          "session": "1 session"
+        }
+      ],
       "isActive": true,
-      "membershipStart": "2025-05-25T12:33:31.992Z",
-      "membershipEnd": "2025-08-25T12:33:31.992Z",
       "notified": false,
-      "points": 10
+      "points": 10,
+      "membershipStartDate": "2025-07-11",
+      "sessionPlans_athlete": "1 session",
+      "membershipEndDate": "2025-10-11",
+      "transaction": [
+        {
+          "id": "TRX-1",
+          "name": "Nam Dale",
+          "type": "membership",
+          "amount": 1700,
+          "date": "2025-07-11"
+        }
+      ]
     }
   ],
   "trainers": [

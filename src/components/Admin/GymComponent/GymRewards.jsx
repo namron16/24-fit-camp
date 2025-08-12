@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import RewardsModal from "./RewardsModal";
 import "./gymRewards.css";
-import { useFetchRewards } from "../../../utils/FetchData";
+import { useFetchRewards } from "../../../hooks/FetchData";
 
 const GymRewards = () => {
   const { rewards } = useFetchRewards();

@@ -1,0 +1,7 @@
+@import url('../../../main.css');
+
+
+.day-pass-form {
+    min-width: 450px;
+    max-width: 450px;
+}

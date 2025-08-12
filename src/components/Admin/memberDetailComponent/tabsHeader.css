@@ -1,0 +1,31 @@
+@import url('../../../main.css');
+
+.member-detail__tabs {
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    gap: 1rem;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: #e1e1e1;
+}
+
+.member-detail__tabs button {
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.active-tab {
+    background-color: var(--light-bg);
+    color: var(--dark-bg-);
+}
+
+.inactive-tab {
+    background-color: transparent;
+    color: var(--dark-gray);
+}

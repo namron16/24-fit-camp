@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react";
-import { useFetchTrainerDetails } from "../../utils/FetchData";
+import { useFetchTrainerDetails } from "../../hooks/FetchData";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useEditTrainer } from "../../utils/FetchData";
+import { useEditTrainer } from "../../hooks/FetchData";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
 import "./trainerdetail.css";
 

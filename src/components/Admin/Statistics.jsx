@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useFetchMembers, useFetchTrainers } from "../../utils/FetchData";
+import { useFetchMembers, useFetchTrainers } from "../../hooks/FetchData";
 import Chart from "./Chart";
 import ReactCalendar from "./Calendar";
 

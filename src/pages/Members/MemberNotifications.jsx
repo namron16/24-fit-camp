@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import usePageTransition from "../../utils/usePageTransition";
+import usePageTransition from "../../hooks/usePageTransition";
 import Loading2 from "../../components/Loading/Loading2";
 import "./memberNotifications.css";
 

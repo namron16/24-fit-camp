@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 import "./memberMenu.css";
 import { NavLink } from "react-router-dom";
-import { useFetchMember } from "../../utils/FetchData";
-import usePageTransition from "../../utils/usePageTransition";
+import { useFetchMember } from "../../hooks/FetchData";
+import usePageTransition from "../../hooks/usePageTransition";
 import Loading2 from "../Loading/Loading2";
 
 const MemberMenu = () => {

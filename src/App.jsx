@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import "./main.css";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,6 +8,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
+//loading && errors
 import { ErrorBoundary } from "react-error-boundary";
 import { QueryErrorResetBoundary } from "@tanstack/react-query";
 import Loading from "./components/Loading/Loading";
@@ -19,17 +19,7 @@ import Root from "./components/Home/Root";
 import HomePage from "./pages/Home/HomePage";
 import Layout from "./components/Admin/Layout";
 
-// import Dashboard from "./pages/Admin/Dashboard";
-// import Gym from "./pages/Admin/Gym";
-// import Trainers from "./pages/Admin/Trainers";
-// import Members from "./pages/Admin/Members";
-// import MemberDetails from "./pages/Admin/MemberDetails";
-// import Notifications from "./pages/Admin/Notifications";
-// import Profile from "./pages/Admin/Profile";
-// import Settings from "./pages/Admin/Settings";
-// import Login from "./pages/login/Login";
-
-//admin
+//admin gym components
 const Dashboard = lazy(() => import("./pages/Admin/Dashboard"));
 const Gym = lazy(() => import("./pages/Admin/Gym"));
 const GymOverview = lazy(() =>
@@ -38,6 +28,7 @@ const GymOverview = lazy(() =>
 const GymRewards = lazy(() =>
   import("./components/Admin/GymComponent/GymRewards")
 );
+//admin page
 const Trainers = lazy(() => import("./pages/Admin/Trainers"));
 const TrainerDetails = lazy(() => import("./pages/Admin/TrainerDetails"));
 const Members = lazy(() => import("./pages/Admin/Members"));
@@ -45,10 +36,10 @@ const MemberDetails = lazy(() => import("./pages/Admin/MemberDetails"));
 const Notifications = lazy(() => import("./pages/Admin/Notifications"));
 const Profile = lazy(() => import("./pages/Admin/Profile"));
 const Settings = lazy(() => import("./pages/Admin/Settings"));
-const Login = lazy(() => import("./pages/login/Login"));
+const Login = lazy(() => import("./pages/auth/Login"));
+const Register = lazy(() => import("./pages/auth/RegisterForm"));
 
-//members
-
+//members page
 import MembersLayout from "./pages/Members/MembersLayout";
 const MemberOverview = lazy(() => import("./pages/Members/MemberOverview"));
 const MemberProfile = lazy(() => import("./pages/Members/MemberProfile"));
@@ -67,22 +58,65 @@ const App = () => {
       <Route path="/" element={<Root />}>
         <Route index element={<HomePage />} />
 
-        {/* <Route path="admin" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="gym-management" element={<Gym />} />
+        <Route path="member-account" element={<MembersLayout />}>
           <Route
-            path="trainers"
-            element={<Trainers />}
-            errorElement={<Error />}
+            index
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberOverview />
+              </Suspense>
+            }
           />
-          <Route path="member">
-            <Route index element={<Members />} />
-            <Route path=":memberId" element={<MemberDetails />} />
+          <Route
+            path="member-profile"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberProfile />
+              </Suspense>
+            }
+          />
+          <Route
+            path="member-notifications"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberNotifications />
+              </Suspense>
+            }
+          />
+          <Route
+            path="member-settings"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberSettings />
+              </Suspense>
+            }
+          />
+          <Route
+            path="rewards"
+            element={
+              <Suspense fallback={<Loading2 />}>
+                <MemberGym />
+              </Suspense>
+            }
+          >
+            <Route
+              index
+              element={
+                <Suspense fallback={<Loading2 />}>
+                  <MemberRewards />
+                </Suspense>
+              }
+            />
+            <Route
+              path="points-history"
+              element={
+                <Suspense fallback={<Loading2 />}>
+                  <MemberPoints />
+                </Suspense>
+              }
+            />
           </Route>
-          <Route path="notifications" element={<Notifications />} />
-          <Route path="admin-profile" element={<Profile />} />
-          <Route path="settings" element={<Settings />} />
-        </Route> */}
+        </Route>
 
         <Route path="admin" element={<Layout />}>
           <Route
@@ -269,66 +303,9 @@ const App = () => {
             }
           />
         </Route>
-        <Route path="member-account" element={<MembersLayout />}>
-          <Route
-            index
-            element={
-              <Suspense fallback={<Loading2 />}>
-                <MemberOverview />
-              </Suspense>
-            }
-          />
-          <Route
-            path="member-profile"
-            element={
-              <Suspense fallback={<Loading2 />}>
-                <MemberProfile />
-              </Suspense>
-            }
-          />
-          <Route
-            path="member-notifications"
-            element={
-              <Suspense fallback={<Loading2 />}>
-                <MemberNotifications />
-              </Suspense>
-            }
-          />
-          <Route
-            path="member-settings"
-            element={
-              <Suspense fallback={<Loading2 />}>
-                <MemberSettings />
-              </Suspense>
-            }
-          />
-          <Route
-            path="rewards"
-            element={
-              <Suspense fallback={<Loading2 />}>
-                <MemberGym />
-              </Suspense>
-            }
-          >
-            <Route
-              index
-              element={
-                <Suspense fallback={<Loading2 />}>
-                  <MemberRewards />
-                </Suspense>
-              }
-            />
-            <Route
-              path="points-history"
-              element={
-                <Suspense fallback={<Loading2 />}>
-                  <MemberPoints />
-                </Suspense>
-              }
-            />
-          </Route>
-        </Route>
+
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )

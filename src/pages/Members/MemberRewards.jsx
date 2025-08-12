@@ -1,9 +1,9 @@
-import React, {useMemo} from "react";
-import { useFetchMember } from "../../utils/FetchData";
-import { useFetchRewards } from "../../utils/FetchData";
+import React, { useMemo } from "react";
+import { useFetchMember } from "../../hooks/FetchData";
+import { useFetchRewards } from "../../hooks/FetchData";
 import "./memberRewards.css";
 const MemberRewards = () => {
-  const {member} = useFetchMember();
+  const { member } = useFetchMember();
   const memberDetails = member?.data?.[0];
   const value = useMemo(
     () => ({
@@ -15,7 +15,10 @@ const MemberRewards = () => {
   const displayRewards = rewards?.data?.map((reward) => {
     const redeemable = value.gymPoints >= reward.points;
     return (
-      <div className={`reward-items ${!redeemable ? "disabled-reward" : ""}`} key={reward.id}>
+      <div
+        className={`reward-items ${!redeemable ? "disabled-reward" : ""}`}
+        key={reward.id}
+      >
         <div className="reward-items__container">
           <div className="reward-items__details">
             <div className="reward-name">{reward.name}</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Statistics from "../../components/Admin/Statistics";
 import Loading from "../../components/Loading/Loading";
-import usePageTransition from "../../utils/usePageTransition";
+import usePageTransition from "../../hooks/usePageTransition";
 const Dashboard = () => {
   const { isPending, showContent } = usePageTransition(300);
 

@@ -1,6 +1,6 @@
 import React from "react";
 import ToggleButton from "../../components/Admin/ToggleButton";
-import usePageTransition from "../../utils/usePageTransition";
+import usePageTransition from "../../hooks/usePageTransition";
 import Loading2 from "../../components/Loading/Loading2";
 import "./memberSettings.css";
 

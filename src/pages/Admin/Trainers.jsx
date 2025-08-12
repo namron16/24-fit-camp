@@ -1,12 +1,12 @@
 import React, { useRef, useMemo, useCallback } from "react";
-import { useFetchTrainers } from "../../utils/FetchData";
-import { useDeleteTrainer } from "../../utils/FetchData";
+import { Link } from "react-router-dom";
+import { useFetchTrainers } from "../../hooks/FetchData";
+import { useDeleteTrainer } from "../../hooks/FetchData";
 import DataTable from "../../components/Admin/DataTable";
 import Loading from "../../components/Loading/Loading";
 import userIcon from "../../assets/user-avatar-filled-alt.svg";
-import Modal from "../../components/Admin/Modal";
-import ActionBtn from "../../components/Admin/ActionBtn";
-import usePageTransition from "../../utils/usePageTransition";
+import TrainerModal from "../../components/Admin/modals/TrainerModal";
+import usePageTransition from "../../hooks/usePageTransition";
 import "./trainers.css";
 
 const Trainers = () => {
@@ -65,11 +65,17 @@ const Trainers = () => {
       renderCell: (params) => {
         return (
           <div className="actions">
-            <ActionBtn
-              handleDelete={handleDelete}
-              paramsId={params.row.id}
-              role={"trainer"}
-            />
+            <Link to={`${params.row.id}`}>
+              <button className="view">
+                <i className="fa-solid fa-expand"></i>
+              </button>
+            </Link>
+            <button
+              onClick={() => handleDelete(params.row.id)}
+              className="delete"
+            >
+              <i className="fa-solid fa-trash"></i>
+            </button>
           </div>
         );
       },
@@ -87,7 +93,7 @@ const Trainers = () => {
       </div>
       <DataTable columns={columns} rows={trainers?.data} />
 
-      <Modal dialogRef={dialogRef} columns={columns} slug={"trainer"} />
+      <TrainerModal dialogRef={dialogRef} />
     </section>
   );
 };

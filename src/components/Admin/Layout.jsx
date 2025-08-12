@@ -3,7 +3,7 @@ import Header from "./Header";
 import Menu from "./Menu";
 import { Outlet } from "react-router-dom";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { useTheme } from "../../utils/useTheme";
+import { useTheme } from "../../hooks/useTheme";
 
 import "./layout.css";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "@tanstack/react-form";
-import { useAddRewards } from "../../../utils/FetchData";
+import { useAddRewards } from "../../../hooks/FetchData";
 import { v4 as uuidV4 } from "uuid";
 import "./rewardsModal.css";
 

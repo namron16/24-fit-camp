@@ -1,6 +1,6 @@
 import React from "react";
 import "./gymOverview.css";
-import { useFetchMembers } from "../../../utils/FetchData";
+import { useFetchMembers } from "../../../hooks/FetchData";
 import icon from "../../../assets/user-avatar-filled-alt.svg";
 
 const GymOverview = () => {

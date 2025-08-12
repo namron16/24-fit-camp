@@ -1,6 +1,6 @@
 import React from "react";
 import "./profile.css";
-import { useFetchAdmins } from "../../utils/FetchData";
+import { useFetchAdmins } from "../../hooks/FetchData";
 
 const Profile = () => {
   const { admins } = useFetchAdmins();

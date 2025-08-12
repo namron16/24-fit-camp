@@ -3,8 +3,6 @@ import './Loading.css'
 
 const Loading = () => {
 
-
-    
   return (
     <div
       aria-label="Orange and tan hamster running in a metal wheel"
